@@ -4,22 +4,25 @@ from datetime import datetime
 from typing import Dict
 from utils.gemini_client import GeminiClient
 from utils.drive_client import DriveClient
-from utils.prompts import get_listening_prompt
+from utils.prompts import get_listening_prompt, get_gauntlet_listening_prompt
 
 class ListeningAgent:
     def __init__(self, client: GeminiClient, drive_client: DriveClient):
         self.client = client
         self.drive_client = drive_client
 
-    def generate_episode(self, level: str, topic: str, date_str: str) -> str:
+    def generate_episode(self, level: str, topic: str, date_str: str, is_gauntlet: bool = False, topics_summary: str = "") -> str:
         """
         Generates the audio, uploads to Drive, deletes local file.
         Returns the Drive URL.
         """
-        print(f"ListeningAgent: Generating script for level {level}, topic {topic}...")
+        print(f"ListeningAgent: Generating script for level {level}, topic {topic} (Gauntlet={is_gauntlet})...")
 
         # 1. Generate Script
-        prompt = get_listening_prompt(level, topic)
+        if is_gauntlet:
+            prompt = get_gauntlet_listening_prompt(level, topics_summary)
+        else:
+            prompt = get_listening_prompt(level, topic)
 
         script_text = self.client.generate_content(prompt, model="gemini-3-pro-preview")
 

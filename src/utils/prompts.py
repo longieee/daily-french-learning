@@ -61,3 +61,49 @@ def get_reading_prompt(level: str, topic: str) -> str:
         2. Fill-in-the-blank question based on the text.
         3. Fill-in-the-blank question based on the text.
         """
+
+def get_gauntlet_listening_prompt(level: str, topics_summary: str) -> str:
+    return f"""
+    You are the Gatekeeper of French Mastery.
+    Input Level: {level} (Testing for promotion to next level)
+    Topics to Review: {topics_summary}
+
+    Task:
+    1. Generate a rigorous, high-speed test script summarizing these topics.
+    2. NO ENGLISH SUPPORT allowed in the main content.
+    3. The tone should be intense and challenging.
+
+    Intro Constraint:
+    - Start EXACTLY with this English line: "This is a test. If you understand 90% of this, edit your config file to Level [Next Level]. Until then, you remain here."
+
+    Output Format (JSON ONLY):
+    [
+        {{"role": "tutor_en", "text": "This is a test. If you understand 90% of this, edit your config file to Level [Next Level]. Until then, you remain here."}},
+        {{"role": "actor_fr", "text": "Complex French summary/test sentence 1...", "speed": 1.1}},
+        {{"role": "actor_fr", "text": "Complex French summary/test sentence 2...", "speed": 1.1}},
+        ...
+    ]
+    """
+
+def get_gauntlet_reading_prompt(level: str, topics_summary: str) -> str:
+    return f"""
+    You are the Gatekeeper of French Mastery.
+    Input Level: {level} (Testing for promotion)
+    Topics to Review: {topics_summary}
+
+    Task:
+    1. Write a complex, high-density essay synthesizing the review topics.
+    2. NO GLOSSARY. NO ENGLISH HELP.
+    3. Use complex sentence structures suitable for testing mastery of {level}.
+
+    Output Format (Markdown):
+    # THE GAUNTLET: REVIEW ({level})
+
+    ## L'Épreuve (The Trial)
+    [Full French Text - Dense and Fast-Paced Style]
+
+    ## Questions de Vie ou de Mort (Active Recall)
+    1. Hard question 1 (in French).
+    2. Hard question 2 (in French).
+    3. Hard question 3 (in French).
+    """

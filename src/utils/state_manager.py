@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from typing import List
 
 STATE_FILE = "user_state.json"
-LEVELS = ["A2", "B1", "B2"]
+LEVEL_THRESHOLDS = {"A2": 60, "B1": 120, "B2": 200}
 
 class StateManager:
     def __init__(self, filepath: str = STATE_FILE):
@@ -15,12 +15,19 @@ class StateManager:
         if not os.path.exists(self.filepath):
             return {
                 "current_level": "A2",
-                "day_streak": 0,
+                "xp_in_level": 0,
+                "status": "TRAINING",
                 "topics_covered": [],
                 "last_run_date": "1970-01-01"
             }
         with open(self.filepath, 'r') as f:
-            return json.load(f)
+            data = json.load(f)
+            # Migration logic
+            if "xp_in_level" not in data:
+                data["xp_in_level"] = 0
+            if "status" not in data:
+                data["status"] = "TRAINING"
+            return data
 
     def save_state(self):
         with open(self.filepath, 'w') as f:
@@ -29,10 +36,19 @@ class StateManager:
     def get_current_level(self) -> str:
         return self.state.get("current_level", "A2")
 
+    def get_status(self) -> str:
+        return self.state.get("status", "TRAINING")
+
+    def get_xp(self) -> int:
+        return self.state.get("xp_in_level", 0)
+
     def get_topics_covered(self) -> List[str]:
         return self.state.get("topics_covered", [])
 
-    def update_streak(self):
+    def update_streak_and_date(self):
+        # We still track date to prevent double runs, but streak is less relevant for promotion now.
+        # However, keeping streak for user vanity is fine.
+        # The prompt didn't ask to delete streak, just change promotion logic.
         last_date_str = self.state.get("last_run_date", "1970-01-01")
         try:
             last_date = datetime.strptime(last_date_str, "%Y-%m-%d").date()
@@ -44,26 +60,29 @@ class StateManager:
         if last_date == today:
             return
         elif last_date == today - timedelta(days=1):
-            self.state["day_streak"] += 1
+            self.state["day_streak"] = self.state.get("day_streak", 0) + 1
         else:
             self.state["day_streak"] = 1
 
         self.state["last_run_date"] = today.strftime("%Y-%m-%d")
 
-    def check_level_up(self) -> bool:
-        streak = self.state.get("day_streak", 0)
-        current_level = self.state.get("current_level", "A2")
+    def check_gauntlet_entry(self):
+        """
+        Checks if the user has reached the XP threshold for the Gauntlet.
+        """
+        level = self.get_current_level()
+        xp = self.get_xp()
+        threshold = LEVEL_THRESHOLDS.get(level, 200)
 
-        if streak > 0 and streak % 30 == 0:
-            try:
-                current_idx = LEVELS.index(current_level)
-                if current_idx < len(LEVELS) - 1:
-                    new_level = LEVELS[current_idx + 1]
-                    self.state["current_level"] = new_level
-                    return True
-            except ValueError:
-                pass
-        return False
+        if xp >= threshold:
+            self.state["status"] = "GAUNTLET"
+        else:
+            # Ensure we are in TRAINING if below threshold (e.g. after manual level up reset)
+            self.state["status"] = "TRAINING"
+
+    def increment_xp(self):
+        if self.state["status"] == "TRAINING":
+            self.state["xp_in_level"] += 1
 
     def add_topics(self, new_topics: List[str]):
         current_topics = set(self.state.get("topics_covered", []))
