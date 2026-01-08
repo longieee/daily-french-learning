@@ -8,7 +8,7 @@ class ReadingAgent:
     def generate_essay(self, level: str, topic: str, date_str: str) -> str:
         """
         Generates the reading essay for the given topic and level.
-        Returns the path to the generated file.
+        Returns the essay text (Markdown string).
         """
         print(f"ReadingAgent: Generating essay for level {level}, topic {topic}...")
 
@@ -39,13 +39,8 @@ class ReadingAgent:
 
         essay_text = self.client.generate_content(prompt, model="gemini-3-pro-preview")
 
-        # Save Text
-        filename = f"{date_str}.md"
-        filepath = os.path.join("content/text", filename)
+        # We no longer save to file here, we return the text to be stored in the Episode Manager.
+        # But for debugging or user manual access, we could still save a copy if desired.
+        # However, the user wants to avoid repo bloat. So returning string is better.
 
-        os.makedirs(os.path.dirname(filepath), exist_ok=True)
-        with open(filepath, "w") as f:
-            f.write(essay_text)
-
-        print(f"ReadingAgent: Essay saved to {filepath}")
-        return filepath
+        return essay_text

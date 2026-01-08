@@ -3,15 +3,17 @@ import os
 from datetime import datetime
 from typing import Dict
 from utils.gemini_client import GeminiClient
+from utils.drive_client import DriveClient
 
 class ListeningAgent:
-    def __init__(self, client: GeminiClient):
+    def __init__(self, client: GeminiClient, drive_client: DriveClient):
         self.client = client
+        self.drive_client = drive_client
 
     def generate_episode(self, level: str, topic: str, date_str: str) -> str:
         """
-        Generates the audio file for the given topic and level.
-        Returns the path to the generated file.
+        Generates the audio, uploads to Drive, deletes local file.
+        Returns the Drive URL.
         """
         print(f"ListeningAgent: Generating script for level {level}, topic {topic}...")
 
@@ -41,7 +43,7 @@ class ListeningAgent:
 
         script_text = self.client.generate_content(prompt, model="gemini-3-pro-preview")
 
-        # Clean up script_text if it contains markdown code blocks
+        # Clean up script_text
         script_text = script_text.strip()
         if script_text.startswith("```json"):
             script_text = script_text[7:]
@@ -55,21 +57,30 @@ class ListeningAgent:
             script_json = json.loads(script_text)
         except json.JSONDecodeError as e:
             print(f"Error decoding script JSON: {e}")
-            print(f"Raw text: {script_text}")
-            # Fallback or retry logic could go here. For now, raise.
             raise
 
         # 2. Generate Audio
         print("ListeningAgent: Synthesizing audio...")
         audio_data = self.client.generate_audio(script_json)
 
-        # 3. Save Audio
+        # 3. Save to Temporary File
         filename = f"daily_drill_{date_str}.mp3"
-        filepath = os.path.join("content/audio", filename)
+        temp_dir = "content/temp"
+        os.makedirs(temp_dir, exist_ok=True)
+        filepath = os.path.join(temp_dir, filename)
 
-        os.makedirs(os.path.dirname(filepath), exist_ok=True)
         with open(filepath, "wb") as f:
             f.write(audio_data)
 
-        print(f"ListeningAgent: Audio saved to {filepath}")
-        return filepath
+        # 4. Upload to Drive
+        print(f"ListeningAgent: Uploading {filename} to Google Drive...")
+        drive_url = self.drive_client.upload_file(filepath, filename)
+
+        # 5. Delete Local File
+        try:
+            os.remove(filepath)
+            print(f"ListeningAgent: Deleted local file {filepath}")
+        except OSError as e:
+            print(f"Warning: Could not delete temp file: {e}")
+
+        return drive_url

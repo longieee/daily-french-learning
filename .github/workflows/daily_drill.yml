@@ -22,14 +22,18 @@ jobs:
       - name: Run The Machine
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
         run: python src/main.py
 
       - name: Commit Artifacts
         run: |
           git config --global user.name "The Drill Sergeant"
           git config --global user.email "bot@machine.com"
-          git add content/ user_state.json feed.xml
-          # Only commit if there are changes
+          git add episodes.json feed.xml user_state.json
+          # Explicitly ensure we are NOT adding any content/ files if they exist
+          git reset content/ 2>/dev/null || true
+
           if [[ -n $(git status -s) ]]; then
             git commit -m "Generated Daily Drill: $(date)"
             git push

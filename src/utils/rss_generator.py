@@ -1,13 +1,9 @@
-import os
 from datetime import datetime
 from feedgen.feed import FeedGenerator
-import glob
+from typing import List, Dict
 
 FEED_FILE = "feed.xml"
-AUDIO_DIR = "content/audio"
-TEXT_DIR = "content/text"
-# Base URL for the podcast files (GitHub Pages)
-# Ideally this should be configurable, but for now we use the user's repo structure
+# We keep the BASE_URL for the feed link itself, but audio links will come from Drive
 BASE_URL = "https://longieee.github.io/daily-french-learning"
 
 class RSSGenerator:
@@ -24,42 +20,27 @@ class RSSGenerator:
         self.fg.podcast.itunes_category('Education', 'Language Courses')
         self.fg.podcast.itunes_explicit('no')
 
-    def generate_feed(self):
-        # We need to scan existing files to rebuild the feed or load the existing one and append?
-        # Rebuilding from file system is safer to ensure sync.
+    def generate_feed(self, episodes: List[Dict]):
+        # episodes is a list of dicts from EpisodeManager
 
-        # Find all mp3 files
-        audio_files = sorted(glob.glob(f"{AUDIO_DIR}/*.mp3"), reverse=True)
-
-        for audio_path in audio_files:
-            filename = os.path.basename(audio_path)
-            # Filename format expected: daily_drill_YYYY-MM-DD.mp3
-            # Extract date
+        for ep in episodes:
+            date_str = ep.get("date")
             try:
-                date_str = filename.replace("daily_drill_", "").replace(".mp3", "")
                 dt = datetime.strptime(date_str, "%Y-%m-%d")
             except ValueError:
                 continue
 
             fe = self.fg.add_entry()
-            fe.id(f"{BASE_URL}/{audio_path}")
-            fe.title(f"Drill: {date_str}")
-            fe.link(href=f"{BASE_URL}/{audio_path}")
+            fe.id(f"daily-drill-{date_str}")
+            fe.title(f"Drill: {date_str} - {ep.get('listening_topic')}")
+            fe.link(href=ep.get("audio_url"))
 
-            # Try to find corresponding text file for description
-            text_path = f"{TEXT_DIR}/{date_str}.md"
-            description = "Daily French Drill."
-            if os.path.exists(text_path):
-                with open(text_path, 'r') as f:
-                    description = f.read()
-
-            # If description is markdown, we might want to convert to HTML or just plain text.
-            # RSS readers usually handle HTML in description.
-            fe.description(description)
+            fe.description(ep.get("description", "Daily French Drill."))
             fe.pubDate(dt.replace(hour=6, minute=0, second=0, microsecond=0).astimezone())
 
             # Enclosure
-            file_size = os.path.getsize(audio_path)
-            fe.enclosure(f"{BASE_URL}/{audio_path}", str(file_size), 'audio/mpeg')
+            # We don't know the exact size without querying Drive, using 0 or mock is risky for some players.
+            # But we can try to use a default.
+            fe.enclosure(ep.get("audio_url"), "0", 'audio/mpeg')
 
         self.fg.rss_file(FEED_FILE)
