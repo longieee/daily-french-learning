@@ -7,6 +7,7 @@ from utils.rss_generator import RSSGenerator
 from utils.gemini_client import GeminiClient
 from utils.drive_client import DriveClient
 from utils.episode_manager import EpisodeManager
+from utils.prompts import get_brainstorm_prompt
 from agents.listening_agent import ListeningAgent
 from agents.reading_agent import ReadingAgent
 
@@ -32,16 +33,7 @@ def main():
 
     # Brainstorm Topics
     print("Brainstorming new topics...")
-    brainstorm_prompt = f"""
-    I need two distinct topics for a French learning session.
-    1. A Classical French Philosophy or Literature topic (e.g., specific work by Camus, Sartre, Voltaire).
-    2. A Math or Physics concept (e.g., Entropy, Vectors, Calculus).
-
-    History of covered topics: {json.dumps(topics_covered)}
-
-    Task: output a JSON object with two fields: "listening_topic" and "reading_topic".
-    Ensure they are NOT in the history.
-    """
+    brainstorm_prompt = get_brainstorm_prompt(json.dumps(topics_covered))
 
     try:
         topics_json_str = gemini_client.generate_content(brainstorm_prompt, model="gemini-3-pro-preview")

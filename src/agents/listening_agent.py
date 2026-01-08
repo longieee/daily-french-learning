@@ -4,6 +4,7 @@ from datetime import datetime
 from typing import Dict
 from utils.gemini_client import GeminiClient
 from utils.drive_client import DriveClient
+from utils.prompts import get_listening_prompt
 
 class ListeningAgent:
     def __init__(self, client: GeminiClient, drive_client: DriveClient):
@@ -18,28 +19,7 @@ class ListeningAgent:
         print(f"ListeningAgent: Generating script for level {level}, topic {topic}...")
 
         # 1. Generate Script
-        prompt = f"""
-        You are an expert French Literature Tutor.
-        Input Level: {level}
-        Topic: {topic} (Classical French Philosophy/Literature)
-
-        Task:
-        1. Select a grounded passage (Quote/Excerpt) relevant to the topic.
-        2. Adapt the text strictly to {level} vocabulary/grammar.
-        3. Generate a script JSON.
-
-        Constraint for Level {level}:
-        - Break text sentence-by-sentence.
-        - Insert an English Tutor explaining grammar/meaning between sentences.
-        - End with full recitation.
-
-        Output Format (JSON ONLY):
-        [
-            {{"role": "tutor_en", "text": "English context..."}},
-            {{"role": "actor_fr", "text": "French sentence..."}},
-            {{"role": "tutor_en", "text": "English explanation..."}}
-        ]
-        """
+        prompt = get_listening_prompt(level, topic)
 
         script_text = self.client.generate_content(prompt, model="gemini-3-pro-preview")
 
