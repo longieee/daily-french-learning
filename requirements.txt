@@ -1,0 +1,5 @@
+requests
+python-dateutil
+feedgen
+google-api-python-client
+google-auth
