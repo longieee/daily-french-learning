@@ -1,27 +1,37 @@
 import os
 import json
 import base64
-from google.oauth2.service_account import Credentials
+from google.oauth2.credentials import Credentials
+from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
+SCOPES = ['https://www.googleapis.com/auth/drive.file']
+
 class DriveClient:
     def __init__(self):
-        self.service_account_json = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON")
+        self.client_id = os.environ.get("GOOGLE_CLIENT_ID")
+        self.client_secret = os.environ.get("GOOGLE_CLIENT_SECRET")
+        self.refresh_token = os.environ.get("GOOGLE_REFRESH_TOKEN")
         self.folder_id = os.environ.get("GOOGLE_DRIVE_FOLDER_ID")
 
-        if not self.service_account_json:
-            print("Warning: GOOGLE_SERVICE_ACCOUNT_JSON not set.")
+        if not all([self.client_id, self.client_secret, self.refresh_token]):
+            print("Warning: OAuth credentials not fully configured.")
+            print("Required: GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REFRESH_TOKEN")
             self.service = None
             return
 
         try:
-            # Parse the JSON string
-            creds_dict = json.loads(self.service_account_json)
-            creds = Credentials.from_service_account_info(
-                creds_dict,
-                scopes=['https://www.googleapis.com/auth/drive.file']
+            creds = Credentials(
+                token=None,
+                refresh_token=self.refresh_token,
+                token_uri='https://oauth2.googleapis.com/token',
+                client_id=self.client_id,
+                client_secret=self.client_secret,
+                scopes=SCOPES
             )
+            # Refresh to get a valid access token
+            creds.refresh(Request())
             self.service = build('drive', 'v3', credentials=creds)
         except Exception as e:
             print(f"Error initializing Drive Client: {e}")
@@ -47,7 +57,8 @@ class DriveClient:
             file = self.service.files().create(
                 body=file_metadata,
                 media_body=media,
-                fields='id'
+                fields='id',
+                supportsAllDrives=True
             ).execute()
 
             file_id = file.get('id')
@@ -57,13 +68,15 @@ class DriveClient:
             self.service.permissions().create(
                 fileId=file_id,
                 body={'type': 'anyone', 'role': 'reader'},
-                fields='id'
+                fields='id',
+                supportsAllDrives=True
             ).execute()
 
             # Get the webContentLink
             result = self.service.files().get(
                 fileId=file_id,
-                fields='webContentLink, webViewLink'
+                fields='webContentLink, webViewLink',
+                supportsAllDrives=True
             ).execute()
 
             # webContentLink is for downloading/streaming
