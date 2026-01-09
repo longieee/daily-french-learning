@@ -1,63 +1,77 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>L'Obsédé - Daily French Drill</title><link>https://longieee.github.io/daily-french-learning</link><description>Automated French learning: Literature, Philosophy, Math, and Physics.</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Fri, 09 Jan 2026 10:40:14 +0000</lastBuildDate><itunes:category text="Education"><itunes:category text="Language Courses"/></itunes:category><itunes:explicit>no</itunes:explicit><item><title>Drill: 2026-01-09 - La Thermodynamique (Thermodynamics)</title><link>https://drive.google.com/uc?id=1XNdfStmYMLLic6wLDsSb2nZSEuRoz0Gv&amp;export=download</link><description># L'Étranger by Albert Camus (A2)
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>L'Obsédé - Daily French Drill</title><link>https://longieee.github.io/daily-french-learning</link><description>Automated French learning: Literature, Philosophy, Math, and Physics.</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Fri, 09 Jan 2026 14:19:13 +0000</lastBuildDate><itunes:category text="Education"><itunes:category text="Language Courses"/></itunes:category><itunes:explicit>no</itunes:explicit><item><title>Drill: 2026-01-09 - Candide - Voltaire: Le Château et l'Expulsion (1/2)</title><link>https://drive.google.com/uc?id=1IAPX6dxGMrBwR7_0nCxF_7DijyI_-lN2&amp;export=download</link><description>Les Matrices (Episode 1 of 2) (A2)
 
-## Section 1: Le Texte
+LE TEXTE
 
-Silence ! Asseyez-vous tout de suite. Vous pensez que ce livre est de la littérature ? C’est faux. Pour un vrai scientifique, *L’Étranger* est une observation de laboratoire. Meursault n’est pas un homme. C’est une simple **masse** physique.
+Silence ! S'il vous plaît, silence dans la salle !
 
-Analysez la première partie. J'observe la première loi de Newton : le principe de **l’inertie**. Un objet reste au repos si aucune **force** ne touche cet objet. Meursault est comme ça. Sa mère est morte ? Il ne change pas. Il n’a pas d’**accélération**. Il mange, il dort, il va travailler. Marie pose des questions sur l'amour, mais Meursault n'a pas de **vecteur** ni de direction. Il est passif.
+Regardez le tableau noir. Regardez bien. Qu'est-ce que vous voyez ? Des nombres ? Des boîtes carrées ? Non ! Vous êtes aveugles ! Ce ne sont pas simplement des nombres. Aujourd'hui, nous commençons un voyage magnifique et dangereux. Aujourd'hui, nous touchons le cœur de l'univers. Aujourd'hui, nous parlons des Matrices !
 
-Ensuite, regardez le meurtre sur la plage. Ce n'est pas de la psychologie, c'est de l'**optique** ! Le soleil est une **source d’énergie** très puissante. La **température** monte. La lumière frappe le couteau de l'Arabe. C’est une **réflexion** directe dans les yeux de Meursault. Son équilibre est brisé par cette énergie externe. Il tire quatre fois. C'est une réaction mécanique à la **chaleur**.
+Écoutez-moi bien. Une matrice n'est pas une simple liste. C'est une machine. C'est une force qui change l'espace. Imaginez une matrice comme un robot. Vous donnez un vecteur au robot, et la matrice transforme ce vecteur. Elle tourne, elle grandit, elle change la direction. C'est incroyable, n'est-ce pas ?
 
-Au tribunal, les juges cherchent des émotions. Mais on ne juge pas une **équation** ! Meursault est logique, froid et précis. C'est tout. Si vous ne comprenez pas ça, sortez de ma classe !
+Mais attention ! Nous devons apprendre les règles. C'est comme la grammaire, mais pour les mathématiques.
 
-## Section 2: Laboratoire de Vocabulaire
+D'abord, nous avons la structure. Une matrice a des lignes horizontales et des colonnes verticales. Nous disons qu'une matrice est "deux par deux" ou "trois par trois". C'est sa taille.
 
-*   **Une masse** (nf): A mass (quantity of matter).
-*   **L’inertie** (nf): Inertia (resistance to change in motion).
-*   **Une force** (nf): A force (interaction that changes the motion of an object).
-*   **Une accélération** (nf): Acceleration (rate of change of velocity).
-*   **Un vecteur** (nm): A vector (quantity having direction as well as magnitude).
-*   **L’optique** (nf): Optics (scientific study of sight and light).
-*   **Une source d’énergie** (nf): An energy source.
-*   **La température** (nf): The temperature.
-*   **Une réflexion** (nf): A reflection (light bouncing off a surface).
-*   **La chaleur** (nf): Heat.
-*   **Une équation** (nf): An equation.
+Ensuite, les opérations. L'addition est très facile. Vous avez deux matrices ? Vous additionnez les nombres à la même position. C'est simple, comme manger une baguette. Mais la multiplication... ah, mes amis, la multiplication est une bête sauvage !
 
-## Section 3: Rappel Actif (Active Recall)
+Pourquoi ? Parce que l'ordre est important. Si vous avez la matrice A et la matrice B, écoutez bien : A fois B n'est pas égal à B fois A ! Jamais ! Enfin, presque jamais. C'est un choc, non ? Dans l'arithmétique normale, deux fois trois égale trois fois deux. Mais ici, dans le monde de l'Algèbre Linéaire, tout est différent. C'est une révolution ! Pour multiplier, nous prenons la ligne de la première matrice et nous la plongeons dans la colonne de la deuxième. C'est une danse complexe.
 
-1. Selon la loi de __________, Meursault ne bouge pas sans une force extérieure.
-2. Sur la plage, la lumière frappe le couteau et crée une __________ dans les yeux de Meursault.
-3. Le professeur compare Meursault à une __________ logique, pas à un homme avec des émotions.</description><guid isPermaLink="false">daily-drill-2026-01-09</guid><enclosure url="https://drive.google.com/uc?id=1XNdfStmYMLLic6wLDsSb2nZSEuRoz0Gv&amp;export=download" length="0" type="audio/mpeg"/><pubDate>Fri, 09 Jan 2026 06:00:00 +0000</pubDate></item><item><title>Drill: 2026-01-09 - L'Étranger d'Albert Camus</title><link>https://drive.google.com/uc?id=1HbXVIMNjU7cHk3Slkpo3-MtPs8WT6Ap5&amp;export=download</link><description># La Mécanique Quantique (A2)
+Maintenant, parlons de la chose la plus importante. Le Déterminant.
 
-## Section 1: Le Texte
+Le déterminant est un nombre unique. C'est l'âme de la matrice. Pour une matrice deux par deux, la formule est simple : a fois d moins b fois c. Mais que signifie ce nombre ? Si le déterminant est grand, la matrice grandit l'espace.
 
-Silence ! Asseyez-vous tout de suite. Vous êtes en retard et votre niveau est médiocre. Aujourd'hui, nous étudions un sujet très difficile pour vos petits cerveaux : **la mécanique quantique**. Écoutez bien, je ne répète pas.
+Mais si le déterminant est zéro... c'est la catastrophe !
 
-La physique classique étudie les grosses choses, comme les voitures ou les planètes. Mais **la mécanique quantique** étudie le monde microscopique : **l'atome** et **l'électron**. Dans ce monde, les règles changent. Une chose peut être une **particule** (solide) et une **onde** (fluide) en même temps. C'est la dualité.
+Si le déterminant est zéro, la matrice détruit l'information. L'espace devient plat. C'est fini. Nous appelons cela une matrice "singulière".
 
-En mathématiques, on ne peut pas calculer la position exacte de l'électron. C'est impossible. Nous utilisons donc **la probabilité**. On calcule où l'objet *peut* être. C'est **le principe d'incertitude**. Vous comprenez ? Probablement pas.
+Pourquoi est-ce tragique ? Parce que nous voulons souvent revenir en arrière. Nous voulons trouver l'Inverse. L'inverse est la machine qui annule l'action. Si la matrice A fait une action, l'inverse de A annule l'action. Mais, si le déterminant est zéro, l'inverse n'existe pas. C'est impossible. La porte est fermée à clé !
 
-Il y a aussi une expérience célèbre. Imaginez un chat dans une boîte fermée. Selon cette théorie, le chat est vivant et mort à la fois. C'est un état de **superposition**. Quand on ouvre la boîte, le chat devient vivant OU mort. C'est bizarre, n'est-ce pas ?
+Alors, mes étudiants, prenez vos stylos. Nous allons calculer. Nous allons trouver ce déterminant. Nous allons voir si la matrice est vivante ou morte. Êtes-vous prêts ? Allons-y !
 
-Enfin, **l'énergie** ne coule pas comme de l'eau. Elle voyage en petits paquets. On appelle ces paquets des **quanta**. Maintenant, arrêtez de pleurer et sortez vos calculatrices !
+LABORATOIRE DE VOCABULAIRE
 
-## Section 2: Laboratoire de Vocabulaire
+une matrice (f): a matrix (rectangular array of numbers)
+une ligne (f): a row
+une colonne (f): a column
+un tableau (m): a board (blackboard) or a table/chart
+une taille (f): a size
+un nombre (m): a number
+une opération (f): an operation
+ajouter (v): to add
+multiplier (v): to multiply
+égal (adj): equal
+un déterminant (m): a determinant (scalar value of a matrix)
+zéro (m): zero
+inverse (adj/n): inverse
+annuler (v): to undo / to cancel
+calculer (v): to calculate
 
-*   **La mécanique quantique** (n.f.): Quantum mechanics (Physics of the very small).
-*   **Un atome** (n.m.): An atom (Basic unit of matter).
-*   **Un électron** (n.m.): An electron (Subatomic particle with negative charge).
-*   **Une particule** (n.f.): A particle (A minute portion of matter).
-*   **Une onde** (n.f.): A wave (Oscillation/vibration that transfers energy).
-*   **La probabilité** (n.f.): Probability (The math of chance).
-*   **Le principe d'incertitude** (exp.): The uncertainty principle (Limit to precision).
-*   **La superposition** (n.f.): Superposition (Being in multiple states at once).
-*   **L'énergie** (n.f.): Energy.
-*   **Un quanta** (n.m.): A quantum (Discrete packet of energy).
+EXERCICES
 
-## Section 3: Rappel Actif (Active Recall)
+1. Vrai ou Faux ?
+Dans la multiplication des matrices, A fois B est toujours égal à B fois A.
 
-1. Dans le monde quantique, une chose peut être une particule et une __________ en même temps.
-2. Pour calculer la position d'un objet microscopique, nous utilisons la __________.
-3. Dans l'expérience de la boîte, le chat est dans un état de __________.</description><guid isPermaLink="false">daily-drill-2026-01-09</guid><enclosure url="https://drive.google.com/uc?id=1HbXVIMNjU7cHk3Slkpo3-MtPs8WT6Ap5&amp;export=download" length="0" type="audio/mpeg"/><pubDate>Fri, 09 Jan 2026 06:00:00 +0000</pubDate></item></channel></rss>
+2. Complétez la phrase (Fill-in-the-blank):
+Si le déterminant est ________, la matrice n'a pas d'inverse.
+
+3. Calcul:
+Calculez le déterminant de cette matrice :
+| 2  1 |
+| 1  3 |
+(Formule : a*d - b*c)
+
+4. Traduction:
+Translate this sentence into French:
+"The determinant is a very important number."
+
+5. Choix Multiple:
+Une matrice a des lignes horizontales et des...
+a) cercles
+b) colonnes verticales
+c) triangles
+d) couleurs
+
+6. Conjugaison:
+Conjuguez le verbe "calculer" au Présent (Nous):
+Nous ________ le déterminant maintenant.</description><guid isPermaLink="false">daily-drill-2026-01-09</guid><enclosure url="https://drive.google.com/uc?id=1IAPX6dxGMrBwR7_0nCxF_7DijyI_-lN2&amp;export=download" length="0" type="audio/mpeg"/><pubDate>Fri, 09 Jan 2026 06:00:00 +0000</pubDate></item></channel></rss>
