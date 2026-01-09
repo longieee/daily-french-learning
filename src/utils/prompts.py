@@ -1,109 +1,189 @@
-from typing import List
+LEVEL_DURATION = {"A1": 10, "A2": 10, "B1": 15, "B2": 20, "C1": 20, "C2": 20}
+LEVEL_WORD_COUNT = {
+    "A1": 800,
+    "A2": 900,
+    "B1": 1200,
+    "B2": 1600,
+    "C1": 1800,
+    "C2": 2000,
+}
 
-def get_brainstorm_prompt(topics_history: str) -> str:
+
+def get_listening_prompt(level: str, topic_context: str) -> str:
+    duration = LEVEL_DURATION.get(level, 10)
+    word_count = LEVEL_WORD_COUNT.get(level, 900)
+
     return f"""
-    I need two distinct topics for a French learning session.
-    1. A Classical French Philosophy or Literature topic (e.g., specific work by Camus, Sartre, Voltaire).
-    2. A Math or Physics concept (e.g., Entropy, Vectors, Calculus).
+You are an expert French Tutor creating a {duration}-MINUTE audio lesson.
+Input Level: {level}
 
-    History of covered topics: {topics_history}
+{topic_context}
 
-    Task: output a JSON object with two fields: "listening_topic" and "reading_topic".
-    Ensure they are NOT in the history.
-    """
+Task:
+1. Create an engaging, in-depth lesson on this specific subtopic.
+2. Adapt content strictly to {level} vocabulary/grammar.
+3. Generate a LONG script JSON (~{word_count}-{word_count + 200} words of dialogue total for {duration} minutes).
+4. Include philosophical discussion and analysis, not just surface-level text reading.
 
-def get_listening_prompt(level: str, topic: str) -> str:
+Structure for Level {level}:
+- Start with context and why this matters
+- Present French text sentence-by-sentence
+- Insert English Tutor explaining meaning, grammar, AND deeper significance
+- Include discussion of themes, philosophy, historical context
+- Add comprehension questions throughout
+- End with key takeaways and preview of next episode (if part of a chain)
+
+Output Format (JSON ONLY):
+[
+    {{"role": "tutor_en", "text": "English context..."}},
+    {{"role": "actor_fr", "text": "French sentence..."}},
+    {{"role": "tutor_en", "text": "English explanation with deeper analysis..."}}
+]
+"""
+
+
+def get_reading_prompt(level: str, topic_context: str) -> str:
     return f"""
-        You are an expert French Literature Tutor.
-        Input Level: {level}
-        Topic: {topic} (Classical French Philosophy/Literature)
+You are a French Physics/Mathematics Professor with a dramatic, intense teaching style.
+You speak as if lecturing passionate students who MUST understand these concepts.
+Input Level: {level}
 
-        Task:
-        1. Select a grounded passage (Quote/Excerpt) relevant to the topic.
-        2. Adapt the text strictly to {level} vocabulary/grammar.
-        3. Generate a script JSON.
+{topic_context}
 
-        Constraint for Level {level}:
-        - Break text sentence-by-sentence.
-        - Insert an English Tutor explaining grammar/meaning between sentences.
-        - End with full recitation.
+Task:
+1. Write an engaging technical essay (400-500 words) in French.
+2. Grammar Constraint: Use ONLY {level} allowed tenses.
+3. Make it feel like an exciting lecture - use rhetorical questions, exclamations, vivid examples.
+4. Include the mathematical/physical intuition, not just formulas.
 
-        Output Format (JSON ONLY):
-        [
-            {{"role": "tutor_en", "text": "English context..."}},
-            {{"role": "actor_fr", "text": "French sentence..."}},
-            {{"role": "tutor_en", "text": "English explanation..."}}
-        ]
-        """
+CRITICAL: Output in PLAIN TEXT only. NO markdown symbols (no #, *, **, -, etc.).
+Use line breaks and spacing for structure instead.
 
-def get_reading_prompt(level: str, topic: str) -> str:
-    return f"""
-        You are a ruthless French Physics Professor.
-        Input Level: {level}
-        Topic: {topic} (Math/Physics Concept)
+Output Format (PLAIN TEXT):
 
-        Task:
-        1. Write a technical essay (approx 200 words) on the topic.
-        2. Grammar Constraint: Use ONLY {level} allowed tenses.
-        3. Vocabulary: Highlight technical terms (e.g., 'la dérivée').
+[Subtopic Title] ({level})
 
-        Output Format (Markdown):
-        # {topic} ({level})
+LE TEXTE
 
-        ## Section 1: Le Texte
-        [The Essay in French]
+[The Essay in French - written as an engaging lecture/monologue with passion and drama]
 
-        ## Section 2: Laboratoire de Vocabulaire
-        - Term (FR): Definition (EN)
+LABORATOIRE DE VOCABULAIRE
 
-        ## Section 3: Rappel Actif (Active Recall)
-        1. Fill-in-the-blank question based on the text.
-        2. Fill-in-the-blank question based on the text.
-        3. Fill-in-the-blank question based on the text.
-        """
+[Term] (gender): [English definition]
+(list 10-15 key terms)
+
+EXERCICES
+
+Vary the exercise types. Include 5-6 exercises from these options:
+- Fill-in-the-blank: Complete the sentence with the missing word
+- Translation: Translate this sentence to French
+- True/False: Statement about the text (Vrai ou Faux?)
+- Multiple choice: Question with 3-4 options
+- Short answer: Answer in French based on the text
+- Conjugation: Conjugate the verb in the correct tense
+- Calculation: A simple calculation using French number vocabulary
+"""
+
 
 def get_gauntlet_listening_prompt(level: str, topics_summary: str) -> str:
     return f"""
-    You are the Gatekeeper of French Mastery.
-    Input Level: {level} (Testing for promotion to next level)
-    Topics to Review: {topics_summary}
+You are the Gatekeeper of French Mastery.
+Input Level: {level} (Testing for promotion to next level)
+Topics to Review: {topics_summary}
 
-    Task:
-    1. Generate a rigorous, high-speed test script summarizing these topics.
-    2. NO ENGLISH SUPPORT allowed in the main content.
-    3. The tone should be intense and challenging.
+Task:
+1. Generate a rigorous, 10-minute test covering these topics at high speed.
+2. NO ENGLISH SUPPORT in the main content after the intro.
+3. The tone should be intense and challenging.
+4. Test both comprehension and recall of key concepts.
 
-    Intro Constraint:
-    - Start EXACTLY with this English line: "This is a test. If you understand 90% of this, edit your config file to Level [Next Level]. Until then, you remain here."
+Intro Constraint:
+- Start with this English line: "This is a test. If you understand 90 percent of this, you are ready for the next level."
 
-    Output Format (JSON ONLY):
-    [
-        {{"role": "tutor_en", "text": "This is a test. If you understand 90% of this, edit your config file to Level [Next Level]. Until then, you remain here."}},
-        {{"role": "actor_fr", "text": "Complex French summary/test sentence 1...", "speed": 1.1}},
-        {{"role": "actor_fr", "text": "Complex French summary/test sentence 2...", "speed": 1.1}},
-        ...
-    ]
-    """
+Output Format (JSON ONLY):
+[
+    {{"role": "tutor_en", "text": "This is a test. If you understand 90 percent of this, you are ready for the next level."}},
+    {{"role": "actor_fr", "text": "Complex French summary/test content..."}},
+    ...
+]
+"""
+
 
 def get_gauntlet_reading_prompt(level: str, topics_summary: str) -> str:
     return f"""
-    You are the Gatekeeper of French Mastery.
-    Input Level: {level} (Testing for promotion)
-    Topics to Review: {topics_summary}
+You are the Gatekeeper of French Mastery.
+Input Level: {level} (Testing for promotion)
+Topics to Review: {topics_summary}
 
-    Task:
-    1. Write a complex, high-density essay synthesizing the review topics.
-    2. NO GLOSSARY. NO ENGLISH HELP.
-    3. Use complex sentence structures suitable for testing mastery of {level}.
+Task:
+1. Write a complex, high-density essay synthesizing the review topics.
+2. NO GLOSSARY. NO ENGLISH HELP.
+3. Use complex sentence structures suitable for testing mastery of {level}.
 
-    Output Format (Markdown):
-    # THE GAUNTLET: REVIEW ({level})
+CRITICAL: Output in PLAIN TEXT only. NO markdown symbols.
 
-    ## L'Épreuve (The Trial)
-    [Full French Text - Dense and Fast-Paced Style]
+Output Format (PLAIN TEXT):
 
-    ## Questions de Vie ou de Mort (Active Recall)
-    1. Hard question 1 (in French).
-    2. Hard question 2 (in French).
-    3. Hard question 3 (in French).
-    """
+THE GAUNTLET: REVIEW ({level})
+
+L'EPREUVE (The Trial)
+
+[Full French Text - Dense synthesis of all reviewed topics]
+
+QUESTIONS DE VIE OU DE MORT
+
+1. Hard question in French
+2. Hard question in French
+3. Hard question in French
+4. Hard question in French
+5. Hard question in French
+"""
+
+
+def get_brainstorm_prompt(category: str, existing_topics: str) -> str:
+    """Generate a prompt to brainstorm new curriculum content when curriculum runs out."""
+    category_descriptions = {
+        "literature": "Classical French Literature (novels, plays, poetry from French authors)",
+        "philosophy": "French Philosophy (existentialism, enlightenment, postmodernism, ethics)",
+        "physics": "Physics concepts explained in French",
+        "mathematics": "Mathematics concepts explained in French",
+    }
+    cat_desc = category_descriptions.get(category, category)
+
+    return f"""
+You are a curriculum designer for French language learning.
+Category: {cat_desc}
+
+Existing topics already in curriculum (DO NOT repeat these):
+{existing_topics}
+
+Task: Create a NEW topic with subtopics for the curriculum.
+
+Output Format (JSON ONLY):
+{{
+    "topic_name": "Name of the work/concept in French",
+    "description": "Brief English description of the topic",
+    "subtopics": [
+        {{
+            "id": "unique-id-1",
+            "title": "Subtopic title in French",
+            "episodes": 2,
+            "description": "What this subtopic covers"
+        }},
+        {{
+            "id": "unique-id-2",
+            "title": "Another subtopic",
+            "episodes": 3,
+            "description": "What this covers"
+        }}
+    ]
+}}
+
+Guidelines:
+- For literature: Choose a specific French literary work (novel, play, collection)
+- For philosophy: Choose a specific philosopher or philosophical movement
+- For physics/math: Choose a coherent topic area
+- Each topic should have 3-6 subtopics
+- Each subtopic should have 2-4 episodes
+- Include one "advanced" subtopic for deeper exploration
+"""

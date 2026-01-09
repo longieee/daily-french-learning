@@ -1,8 +1,9 @@
-import os
-import json
-import requests
 import base64
-from typing import List, Dict, Optional, Union
+import os
+from typing import Dict, List
+
+import requests
+
 
 class GeminiClient:
     def __init__(self):
@@ -69,7 +70,9 @@ class GeminiClient:
         url = f"{self.base_url}/{model}:streamGenerateContent?key={self.api_key}"
 
         parts = []
-        parts.append("Read the following dialogue aloud. Speaker 1 is an English Tutor (Voice: Zephyr). Speaker 2 is a French Actor (Voice: Puck).")
+        parts.append(
+            "Read the following dialogue aloud at a natural, conversational pace. Do not slow down for language learners - speak at normal native speed. Speaker 1 is an English Tutor (Voice: Zephyr). Speaker 2 is a French Actor (Voice: Puck)."
+        )
 
         for turn in script:
             speaker_label = "Speaker 1" if turn["role"] == "tutor_en" else "Speaker 2"
@@ -136,5 +139,7 @@ class GeminiClient:
 
             return audio_data
         except Exception as e:
+            print(f"Error parsing Gemini Audio response: {e}")
+            raise
             print(f"Error parsing Gemini Audio response: {e}")
             raise

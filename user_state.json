@@ -1,11 +1,14 @@
 {
   "current_level": "A2",
-  "xp_in_level": 1,
+  "xp_in_level": 0,
   "status": "TRAINING",
-  "topics_covered": [
-    "La M\u00e9canique Quantique",
-    "L'\u00c9tranger d'Albert Camus"
-  ],
-  "last_run_date": "2026-01-09",
-  "day_streak": 0
+  "last_run_date": "1970-01-01",
+  "day_streak": 0,
+  "current_chain": null,
+  "progress": {
+    "literature": {},
+    "philosophy": {},
+    "physics": {},
+    "mathematics": {}
+  }
 }

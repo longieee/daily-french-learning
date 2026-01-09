@@ -1,0 +1,431 @@
+{
+  "literature": {
+    "L'Étranger - Albert Camus": {
+      "description": "Existentialist novel exploring absurdism through Meursault's detached narrative",
+      "subtopics": [
+        {
+          "id": "etranger-1",
+          "title": "Part 1: La Mort de Maman",
+          "episodes": 3,
+          "description": "The funeral, emotional detachment, and introduction to Meursault's character"
+        },
+        {
+          "id": "etranger-2",
+          "title": "Part 1: Marie et la Vie Quotidienne",
+          "episodes": 2,
+          "description": "Meursault's relationship with Marie, his routine, sensory experiences"
+        },
+        {
+          "id": "etranger-3",
+          "title": "Part 1: Le Meurtre sur la Plage",
+          "episodes": 3,
+          "description": "The buildup, the sun, the Arab, the pivotal murder scene"
+        },
+        {
+          "id": "etranger-4",
+          "title": "Part 2: Le Procès",
+          "episodes": 3,
+          "description": "The trial, society's judgment, Meursault's indifference"
+        },
+        {
+          "id": "etranger-5",
+          "title": "Part 2: La Condamnation et l'Absurde",
+          "episodes": 2,
+          "description": "Death sentence, confrontation with the chaplain, embracing the absurd"
+        },
+        {
+          "id": "etranger-philosophy",
+          "title": "Philosophical Deep Dive: L'Absurdisme",
+          "episodes": 3,
+          "description": "Camus's philosophy of the absurd, comparison with Sisyphus, existential themes",
+          "advanced": true
+        }
+      ]
+    },
+    "Le Petit Prince - Antoine de Saint-Exupéry": {
+      "description": "Philosophical tale about love, loss, and what truly matters in life",
+      "subtopics": [
+        {
+          "id": "prince-1",
+          "title": "Le Narrateur et le Désert",
+          "episodes": 2,
+          "description": "The pilot's crash, meeting the little prince, drawings and imagination"
+        },
+        {
+          "id": "prince-2",
+          "title": "Les Planètes et Les Grandes Personnes",
+          "episodes": 3,
+          "description": "The king, the vain man, the drunkard, the businessman - critique of adult world"
+        },
+        {
+          "id": "prince-3",
+          "title": "La Rose et le Renard",
+          "episodes": 3,
+          "description": "Love, taming, responsibility - 'On ne voit bien qu'avec le cœur'"
+        },
+        {
+          "id": "prince-philosophy",
+          "title": "Philosophical Deep Dive: L'Essentiel Invisible",
+          "episodes": 2,
+          "description": "Themes of childhood wisdom, materialism critique, bonds and responsibility",
+          "advanced": true
+        }
+      ]
+    },
+    "Candide - Voltaire": {
+      "description": "Satirical novella attacking optimism and exploring the problem of evil",
+      "subtopics": [
+        {
+          "id": "candide-1",
+          "title": "Le Château et l'Expulsion",
+          "episodes": 2,
+          "description": "Pangloss's optimism, the perfect world of Thunder-ten-tronckh, Candide's exile"
+        },
+        {
+          "id": "candide-2",
+          "title": "Les Voyages et Les Catastrophes",
+          "episodes": 3,
+          "description": "War, the Lisbon earthquake, encounters with suffering"
+        },
+        {
+          "id": "candide-3",
+          "title": "Eldorado et Le Retour",
+          "episodes": 2,
+          "description": "The utopia of Eldorado, why Candide leaves, pursuit of Cunégonde"
+        },
+        {
+          "id": "candide-4",
+          "title": "Le Jardin: 'Il faut cultiver notre jardin'",
+          "episodes": 2,
+          "description": "The conclusion, rejection of philosophy, practical wisdom"
+        },
+        {
+          "id": "candide-philosophy",
+          "title": "Philosophical Deep Dive: Contre Leibniz",
+          "episodes": 2,
+          "description": "Voltaire vs. Leibnizian optimism, theodicy, Enlightenment values",
+          "advanced": true
+        }
+      ]
+    },
+    "Huis Clos - Jean-Paul Sartre": {
+      "description": "Existentialist play - 'Hell is other people'",
+      "subtopics": [
+        {
+          "id": "huisclos-1",
+          "title": "L'Entrée en Enfer",
+          "episodes": 2,
+          "description": "Garcin arrives, the room, expectations vs. reality of hell"
+        },
+        {
+          "id": "huisclos-2",
+          "title": "Les Trois Damnés",
+          "episodes": 2,
+          "description": "Inès, Estelle - their sins, their needs, the dynamic forms"
+        },
+        {
+          "id": "huisclos-3",
+          "title": "Le Regard et le Jugement",
+          "episodes": 2,
+          "description": "Being seen by others, self-deception, the torture of judgment"
+        },
+        {
+          "id": "huisclos-philosophy",
+          "title": "Philosophical Deep Dive: L'Existentialisme",
+          "episodes": 3,
+          "description": "Bad faith, being-for-others, freedom and responsibility, Sartre's existentialism",
+          "advanced": true
+        }
+      ]
+    }
+  },
+  "physics": {
+    "La Mécanique Classique": {
+      "description": "Newtonian mechanics - forces, motion, and energy",
+      "subtopics": [
+        {
+          "id": "meca-1",
+          "title": "Les Lois de Newton",
+          "episodes": 3,
+          "description": "Inertia, F=ma, action-reaction, applications"
+        },
+        {
+          "id": "meca-2",
+          "title": "L'Énergie et le Travail",
+          "episodes": 2,
+          "description": "Kinetic and potential energy, conservation, work"
+        },
+        {
+          "id": "meca-3",
+          "title": "La Gravitation",
+          "episodes": 2,
+          "description": "Universal gravitation, orbits, Kepler's laws"
+        }
+      ]
+    },
+    "La Thermodynamique": {
+      "description": "Heat, energy, and entropy",
+      "subtopics": [
+        {
+          "id": "thermo-1",
+          "title": "Température et Chaleur",
+          "episodes": 2,
+          "description": "Temperature scales, heat transfer, thermal equilibrium"
+        },
+        {
+          "id": "thermo-2",
+          "title": "Les Lois de la Thermodynamique",
+          "episodes": 3,
+          "description": "First law (conservation), second law (entropy), third law"
+        },
+        {
+          "id": "thermo-3",
+          "title": "L'Entropie et le Désordre",
+          "episodes": 2,
+          "description": "Statistical mechanics view, arrow of time, heat death",
+          "advanced": true
+        }
+      ]
+    },
+    "L'Électromagnétisme": {
+      "description": "Electric and magnetic phenomena",
+      "subtopics": [
+        {
+          "id": "em-1",
+          "title": "Les Charges et les Champs Électriques",
+          "episodes": 2,
+          "description": "Coulomb's law, electric fields, potential"
+        },
+        {
+          "id": "em-2",
+          "title": "Le Magnétisme",
+          "episodes": 2,
+          "description": "Magnetic fields, Lorentz force, electromagnets"
+        },
+        {
+          "id": "em-3",
+          "title": "Les Équations de Maxwell",
+          "episodes": 3,
+          "description": "Unification of electricity and magnetism, electromagnetic waves",
+          "advanced": true
+        }
+      ]
+    },
+    "La Mécanique Quantique": {
+      "description": "Quantum phenomena and wave-particle duality",
+      "subtopics": [
+        {
+          "id": "quantum-1",
+          "title": "La Dualité Onde-Particule",
+          "episodes": 2,
+          "description": "Photoelectric effect, de Broglie wavelength, double-slit experiment"
+        },
+        {
+          "id": "quantum-2",
+          "title": "Le Principe d'Incertitude",
+          "episodes": 2,
+          "description": "Heisenberg's uncertainty principle, measurement problem"
+        },
+        {
+          "id": "quantum-3",
+          "title": "L'Équation de Schrödinger",
+          "episodes": 3,
+          "description": "Wave functions, probability, quantum states",
+          "advanced": true
+        }
+      ]
+    },
+    "La Relativité": {
+      "description": "Einstein's theories of special and general relativity",
+      "subtopics": [
+        {
+          "id": "rel-1",
+          "title": "La Relativité Restreinte",
+          "episodes": 3,
+          "description": "Speed of light, time dilation, length contraction, E=mc²"
+        },
+        {
+          "id": "rel-2",
+          "title": "La Relativité Générale",
+          "episodes": 3,
+          "description": "Gravity as geometry, spacetime curvature, black holes",
+          "advanced": true
+        }
+      ]
+    }
+  },
+  "mathematics": {
+    "Le Calcul Différentiel et Intégral": {
+      "description": "Calculus - derivatives, integrals, and their applications",
+      "subtopics": [
+        {
+          "id": "calc-1",
+          "title": "Les Limites et la Continuité",
+          "episodes": 2,
+          "description": "Concept of limits, continuity, approaching infinity"
+        },
+        {
+          "id": "calc-2",
+          "title": "La Dérivée",
+          "episodes": 3,
+          "description": "Rate of change, derivative rules, applications"
+        },
+        {
+          "id": "calc-3",
+          "title": "L'Intégrale",
+          "episodes": 3,
+          "description": "Area under curves, fundamental theorem, techniques"
+        }
+      ]
+    },
+    "L'Algèbre Linéaire": {
+      "description": "Vectors, matrices, and linear transformations",
+      "subtopics": [
+        {
+          "id": "linalg-1",
+          "title": "Les Vecteurs",
+          "episodes": 2,
+          "description": "Vector operations, dot product, cross product"
+        },
+        {
+          "id": "linalg-2",
+          "title": "Les Matrices",
+          "episodes": 2,
+          "description": "Matrix operations, determinants, inverses"
+        },
+        {
+          "id": "linalg-3",
+          "title": "Les Transformations Linéaires",
+          "episodes": 2,
+          "description": "Eigenvalues, eigenvectors, diagonalization",
+          "advanced": true
+        }
+      ]
+    },
+    "La Théorie des Nombres": {
+      "description": "Properties of integers and prime numbers",
+      "subtopics": [
+        {
+          "id": "numtheory-1",
+          "title": "Les Nombres Premiers",
+          "episodes": 2,
+          "description": "Prime factorization, infinitude of primes, sieve of Eratosthenes"
+        },
+        {
+          "id": "numtheory-2",
+          "title": "L'Arithmétique Modulaire",
+          "episodes": 2,
+          "description": "Congruences, modular arithmetic, applications in cryptography"
+        }
+      ]
+    }
+  },
+  "philosophy": {
+    "L'Existentialisme": {
+      "description": "20th century philosophy focusing on individual existence, freedom, and choice",
+      "subtopics": [
+        {
+          "id": "exist-1",
+          "title": "Les Origines: Kierkegaard et Nietzsche",
+          "episodes": 2,
+          "description": "Proto-existentialists, the leap of faith, God is dead, will to power"
+        },
+        {
+          "id": "exist-2",
+          "title": "Sartre: L'Existence Précède l'Essence",
+          "episodes": 3,
+          "description": "Being and Nothingness, radical freedom, bad faith, responsibility"
+        },
+        {
+          "id": "exist-3",
+          "title": "Beauvoir: L'Existentialisme et le Féminisme",
+          "episodes": 2,
+          "description": "The Second Sex, the Other, situated freedom"
+        },
+        {
+          "id": "exist-4",
+          "title": "Camus: L'Absurde et la Révolte",
+          "episodes": 3,
+          "description": "The Myth of Sisyphus, absurdism vs existentialism, philosophical suicide"
+        }
+      ]
+    },
+    "Les Lumières": {
+      "description": "The French Enlightenment and its revolutionary ideas",
+      "subtopics": [
+        {
+          "id": "lumieres-1",
+          "title": "Voltaire: La Raison contre la Superstition",
+          "episodes": 2,
+          "description": "Deism, religious tolerance, criticism of the Church, Écrasez l'infâme"
+        },
+        {
+          "id": "lumieres-2",
+          "title": "Rousseau: Le Contrat Social",
+          "episodes": 3,
+          "description": "State of nature, general will, education, noble savage"
+        },
+        {
+          "id": "lumieres-3",
+          "title": "Montesquieu: La Séparation des Pouvoirs",
+          "episodes": 2,
+          "description": "The Spirit of the Laws, checks and balances, political liberty"
+        },
+        {
+          "id": "lumieres-4",
+          "title": "L'Encyclopédie: Le Projet des Lumières",
+          "episodes": 2,
+          "description": "Diderot and d'Alembert, spreading knowledge, challenging authority"
+        }
+      ]
+    },
+    "Le Rationalisme Français": {
+      "description": "Descartes and the foundations of modern philosophy",
+      "subtopics": [
+        {
+          "id": "descartes-1",
+          "title": "Le Doute Méthodique",
+          "episodes": 2,
+          "description": "Systematic doubt, the evil demon, foundations of certainty"
+        },
+        {
+          "id": "descartes-2",
+          "title": "Cogito Ergo Sum",
+          "episodes": 2,
+          "description": "I think therefore I am, the first certainty, building knowledge"
+        },
+        {
+          "id": "descartes-3",
+          "title": "Le Dualisme Corps-Esprit",
+          "episodes": 2,
+          "description": "Mind-body problem, res cogitans vs res extensa, pineal gland"
+        }
+      ]
+    },
+    "La Philosophie Morale": {
+      "description": "French contributions to ethics and moral philosophy",
+      "subtopics": [
+        {
+          "id": "morale-1",
+          "title": "Pascal: Le Pari et la Misère de l'Homme",
+          "episodes": 2,
+          "description": "Pascal's Wager, human wretchedness, the heart has reasons"
+        },
+        {
+          "id": "morale-2",
+          "title": "Levinas: L'Éthique comme Philosophie Première",
+          "episodes": 2,
+          "description": "The face of the Other, infinite responsibility, ethics before ontology",
+          "advanced": true
+        },
+        {
+          "id": "morale-3",
+          "title": "Foucault: Le Pouvoir et la Morale",
+          "episodes": 3,
+          "description": "Power/knowledge, discipline, care of the self, ethics as aesthetics",
+          "advanced": true
+        }
+      ]
+    }
+  }
+}
