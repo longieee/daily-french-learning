@@ -51,22 +51,25 @@ class ListeningAgent:
         temp_dir = "content/temp"
         os.makedirs(temp_dir, exist_ok=True)
         
-        # Gemini TTS returns raw PCM audio, save as WAV first
-        wav_filename = f"daily_drill_{date_str}.wav"
-        wav_filepath = os.path.join(temp_dir, wav_filename)
+        # Gemini TTS returns raw PCM audio (24kHz, 16-bit, little-endian, mono)
+        raw_filename = f"daily_drill_{date_str}.pcm"
+        raw_filepath = os.path.join(temp_dir, raw_filename)
         
         mp3_filename = f"daily_drill_{date_str}.mp3"
         mp3_filepath = os.path.join(temp_dir, mp3_filename)
 
-        with open(wav_filepath, "wb") as f:
+        with open(raw_filepath, "wb") as f:
             f.write(audio_data)
 
-        # Convert WAV to MP3 using ffmpeg
+        # Convert raw PCM to MP3 using ffmpeg
         print("ListeningAgent: Converting audio to MP3...")
         try:
-            subprocess.run([
+            result = subprocess.run([
                 "ffmpeg", "-y",
-                "-i", wav_filepath,
+                "-f", "s16le",        # Input format: signed 16-bit little-endian
+                "-ar", "24000",       # Sample rate: 24kHz
+                "-ac", "1",           # Channels: mono
+                "-i", raw_filepath,
                 "-codec:a", "libmp3lame",
                 "-qscale:a", "2",
                 mp3_filepath
@@ -75,9 +78,9 @@ class ListeningAgent:
             print(f"Error converting audio: {e.stderr.decode()}")
             raise
         finally:
-            # Clean up WAV file
-            if os.path.exists(wav_filepath):
-                os.remove(wav_filepath)
+            # Clean up raw PCM file
+            if os.path.exists(raw_filepath):
+                os.remove(raw_filepath)
 
         # 4. Upload to Drive
         print(f"ListeningAgent: Uploading {mp3_filename} to Google Drive...")
