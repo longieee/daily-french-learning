@@ -1,7 +1,11 @@
 {
   "current_level": "A2",
-  "xp_in_level": 0,
+  "xp_in_level": 1,
   "status": "TRAINING",
-  "topics_covered": [],
-  "last_run_date": "1970-01-01"
+  "topics_covered": [
+    "La Thermodynamique (Thermodynamics)",
+    "L'\u00c9tranger by Albert Camus"
+  ],
+  "last_run_date": "2026-01-09",
+  "day_streak": 1
 }
