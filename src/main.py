@@ -223,10 +223,10 @@ def main():
 
         try:
             # 1. Generate Listening (Audio -> Drive URL)
-            audio_url = listening_agent.generate_episode(
+            audio_url, file_size = listening_agent.generate_episode(
                 current_level, listening_context, today_str
             )
-            print(f"Audio available at: {audio_url}")
+            print(f"Audio available at: {audio_url} ({file_size} bytes)")
 
             # 2. Generate Reading (Essay Text)
             essay_text = reading_agent.generate_essay(
@@ -268,6 +268,7 @@ def main():
         reading_topic=reading_topic,
         audio_url=audio_url,
         description_text=essay_text,
+        file_size=file_size,
     )
 
     # Update Feed

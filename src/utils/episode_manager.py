@@ -23,13 +23,14 @@ class EpisodeManager:
             json.dump(self.episodes, f, indent=2)
 
     def add_episode(self, date: str, listening_topic: str, reading_topic: str,
-                   audio_url: str, description_text: str):
+                   audio_url: str, description_text: str, file_size: int = 0):
         episode = {
             "date": date,
             "listening_topic": listening_topic,
             "reading_topic": reading_topic,
             "audio_url": audio_url,
-            "description": description_text
+            "description": description_text,
+            "file_size": file_size
         }
         # Prepend to list (newest first)
         self.episodes.insert(0, episode)

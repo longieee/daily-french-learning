@@ -12,10 +12,10 @@ class ListeningAgent:
         self.client = client
         self.drive_client = drive_client
 
-    def generate_episode(self, level: str, topic: str, date_str: str, is_gauntlet: bool = False, topics_summary: str = "") -> str:
+    def generate_episode(self, level: str, topic: str, date_str: str, is_gauntlet: bool = False, topics_summary: str = "") -> tuple:
         """
         Generates the audio, uploads to Drive, deletes local file.
-        Returns the Drive URL.
+        Returns a tuple of (drive_url, file_size).
         """
         print(f"ListeningAgent: Generating script for level {level}, topic {topic} (Gauntlet={is_gauntlet})...")
 
@@ -84,7 +84,7 @@ class ListeningAgent:
 
         # 4. Upload to Drive
         print(f"ListeningAgent: Uploading {mp3_filename} to Google Drive...")
-        drive_url = self.drive_client.upload_file(mp3_filepath, mp3_filename)
+        drive_url, file_size = self.drive_client.upload_file(mp3_filepath, mp3_filename)
 
         # 5. Delete Local File
         try:
@@ -93,6 +93,4 @@ class ListeningAgent:
         except OSError as e:
             print(f"Warning: Could not delete temp file: {e}")
 
-        return drive_url
-
-        return drive_url
+        return drive_url, file_size

@@ -74,14 +74,16 @@ class DriveClient:
             # Get the webContentLink
             result = self.service.files().get(
                 fileId=file_id,
-                fields='webContentLink, webViewLink',
+                fields='webContentLink, webViewLink, size',
                 supportsAllDrives=True
             ).execute()
 
             # webContentLink is for downloading/streaming
-            return result.get('webContentLink') or result.get('webViewLink')
+            url = result.get('webContentLink') or result.get('webViewLink')
+            file_size = int(result.get('size', 0))
+            
+            return url, file_size
 
         except Exception as e:
             print(f"Error uploading to Drive: {e}")
-            raise
             raise
