@@ -77,10 +77,15 @@ class GeminiClient:
             print(f"Error parsing Gemini response: {e}")
             raise
 
-    def generate_audio(self, script: List[Dict[str, str]], model: str = "gemini-2.5-pro-preview-tts") -> bytes:
-        if not self.api_key:
-            raise ValueError("GEMINI_API_KEY is missing")
+    def _chunk_script(self, script: List[Dict[str, str]], max_turns_per_chunk: int = 20) -> List[List[Dict[str, str]]]:
+        """Split script into smaller chunks for TTS processing."""
+        chunks = []
+        for i in range(0, len(script), max_turns_per_chunk):
+            chunks.append(script[i:i + max_turns_per_chunk])
+        return chunks
 
+    def _generate_audio_chunk(self, script_chunk: List[Dict[str, str]], model: str) -> bytes:
+        """Generate audio for a single chunk of the script."""
         url = f"{self.base_url}/{model}:streamGenerateContent?key={self.api_key}"
 
         parts = []
@@ -88,7 +93,7 @@ class GeminiClient:
             "Read the following dialogue aloud at a natural, conversational pace. Do not slow down for language learners - speak at normal native speed. Speaker 1 is an English Tutor (Voice: Zephyr). Speaker 2 is a French Actor (Voice: Puck)."
         )
 
-        for turn in script:
+        for turn in script_chunk:
             speaker_label = "Speaker 1" if turn["role"] == "tutor_en" else "Speaker 2"
             parts.append(f"{speaker_label}: {turn['text']}")
 
@@ -130,20 +135,20 @@ class GeminiClient:
             }
         }
 
-        # TTS can take longer, use extended timeout with manual retry for connection errors
+        # TTS with retry logic for connection errors
         max_retries = 3
         for attempt in range(max_retries):
             try:
-                response = self.session.post(url, json=payload, timeout=300)
+                response = self.session.post(url, json=payload, timeout=180)
                 response.raise_for_status()
                 break
             except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
                 if attempt < max_retries - 1:
-                    wait_time = 5 * (attempt + 1)
-                    print(f"TTS request failed (attempt {attempt + 1}/{max_retries}), retrying in {wait_time}s: {e}")
+                    wait_time = 10 * (attempt + 1)
+                    print(f"TTS chunk request failed (attempt {attempt + 1}/{max_retries}), retrying in {wait_time}s: {e}")
                     time.sleep(wait_time)
                 else:
-                    print(f"TTS request failed after {max_retries} attempts")
+                    print(f"TTS chunk request failed after {max_retries} attempts")
                     raise
 
         audio_data = b""
@@ -166,7 +171,24 @@ class GeminiClient:
 
             return audio_data
         except Exception as e:
-            print(f"Error parsing Gemini Audio response: {e}")
+            print(f"Error parsing Gemini Audio chunk response: {e}")
             raise
-            print(f"Error parsing Gemini Audio response: {e}")
-            raise
+
+    def generate_audio(self, script: List[Dict[str, str]], model: str = "gemini-2.5-pro-preview-tts") -> bytes:
+        if not self.api_key:
+            raise ValueError("GEMINI_API_KEY is missing")
+
+        # Split script into chunks to avoid TTS timeout issues
+        chunks = self._chunk_script(script, max_turns_per_chunk=20)
+        print(f"Generating audio in {len(chunks)} chunk(s)...")
+
+        all_audio_data = b""
+        for i, chunk in enumerate(chunks):
+            print(f"Processing chunk {i + 1}/{len(chunks)} ({len(chunk)} turns)...")
+            chunk_audio = self._generate_audio_chunk(chunk, model)
+            all_audio_data += chunk_audio
+            # Small delay between chunks to avoid rate limiting
+            if i < len(chunks) - 1:
+                time.sleep(2)
+
+        return all_audio_data
