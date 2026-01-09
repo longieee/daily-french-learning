@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>L'Obsédé - Daily French Drill</title><link>https://longieee.github.io/daily-french-learning</link><description>Automated French learning: Literature, Philosophy, Math, and Physics.</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Fri, 09 Jan 2026 09:28:00 +0000</lastBuildDate><itunes:category text="Education"><itunes:category text="Language Courses"/></itunes:category><itunes:explicit>no</itunes:explicit><item><title>Drill: 2026-01-09 - La Thermodynamique (Thermodynamics)</title><link>https://drive.google.com/uc?id=1XNdfStmYMLLic6wLDsSb2nZSEuRoz0Gv&amp;export=download</link><description># L'Étranger by Albert Camus (A2)
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>L'Obsédé - Daily French Drill</title><link>https://longieee.github.io/daily-french-learning</link><description>Automated French learning: Literature, Philosophy, Math, and Physics.</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Fri, 09 Jan 2026 10:40:14 +0000</lastBuildDate><itunes:category text="Education"><itunes:category text="Language Courses"/></itunes:category><itunes:explicit>no</itunes:explicit><item><title>Drill: 2026-01-09 - La Thermodynamique (Thermodynamics)</title><link>https://drive.google.com/uc?id=1XNdfStmYMLLic6wLDsSb2nZSEuRoz0Gv&amp;export=download</link><description># L'Étranger by Albert Camus (A2)
 
 ## Section 1: Le Texte
 
@@ -29,4 +29,35 @@ Au tribunal, les juges cherchent des émotions. Mais on ne juge pas une **équat
 
 1. Selon la loi de __________, Meursault ne bouge pas sans une force extérieure.
 2. Sur la plage, la lumière frappe le couteau et crée une __________ dans les yeux de Meursault.
-3. Le professeur compare Meursault à une __________ logique, pas à un homme avec des émotions.</description><guid isPermaLink="false">daily-drill-2026-01-09</guid><enclosure url="https://drive.google.com/uc?id=1XNdfStmYMLLic6wLDsSb2nZSEuRoz0Gv&amp;export=download" length="0" type="audio/mpeg"/><pubDate>Fri, 09 Jan 2026 06:00:00 +0000</pubDate></item></channel></rss>
+3. Le professeur compare Meursault à une __________ logique, pas à un homme avec des émotions.</description><guid isPermaLink="false">daily-drill-2026-01-09</guid><enclosure url="https://drive.google.com/uc?id=1XNdfStmYMLLic6wLDsSb2nZSEuRoz0Gv&amp;export=download" length="0" type="audio/mpeg"/><pubDate>Fri, 09 Jan 2026 06:00:00 +0000</pubDate></item><item><title>Drill: 2026-01-09 - L'Étranger d'Albert Camus</title><link>https://drive.google.com/uc?id=1HbXVIMNjU7cHk3Slkpo3-MtPs8WT6Ap5&amp;export=download</link><description># La Mécanique Quantique (A2)
+
+## Section 1: Le Texte
+
+Silence ! Asseyez-vous tout de suite. Vous êtes en retard et votre niveau est médiocre. Aujourd'hui, nous étudions un sujet très difficile pour vos petits cerveaux : **la mécanique quantique**. Écoutez bien, je ne répète pas.
+
+La physique classique étudie les grosses choses, comme les voitures ou les planètes. Mais **la mécanique quantique** étudie le monde microscopique : **l'atome** et **l'électron**. Dans ce monde, les règles changent. Une chose peut être une **particule** (solide) et une **onde** (fluide) en même temps. C'est la dualité.
+
+En mathématiques, on ne peut pas calculer la position exacte de l'électron. C'est impossible. Nous utilisons donc **la probabilité**. On calcule où l'objet *peut* être. C'est **le principe d'incertitude**. Vous comprenez ? Probablement pas.
+
+Il y a aussi une expérience célèbre. Imaginez un chat dans une boîte fermée. Selon cette théorie, le chat est vivant et mort à la fois. C'est un état de **superposition**. Quand on ouvre la boîte, le chat devient vivant OU mort. C'est bizarre, n'est-ce pas ?
+
+Enfin, **l'énergie** ne coule pas comme de l'eau. Elle voyage en petits paquets. On appelle ces paquets des **quanta**. Maintenant, arrêtez de pleurer et sortez vos calculatrices !
+
+## Section 2: Laboratoire de Vocabulaire
+
+*   **La mécanique quantique** (n.f.): Quantum mechanics (Physics of the very small).
+*   **Un atome** (n.m.): An atom (Basic unit of matter).
+*   **Un électron** (n.m.): An electron (Subatomic particle with negative charge).
+*   **Une particule** (n.f.): A particle (A minute portion of matter).
+*   **Une onde** (n.f.): A wave (Oscillation/vibration that transfers energy).
+*   **La probabilité** (n.f.): Probability (The math of chance).
+*   **Le principe d'incertitude** (exp.): The uncertainty principle (Limit to precision).
+*   **La superposition** (n.f.): Superposition (Being in multiple states at once).
+*   **L'énergie** (n.f.): Energy.
+*   **Un quanta** (n.m.): A quantum (Discrete packet of energy).
+
+## Section 3: Rappel Actif (Active Recall)
+
+1. Dans le monde quantique, une chose peut être une particule et une __________ en même temps.
+2. Pour calculer la position d'un objet microscopique, nous utilisons la __________.
+3. Dans l'expérience de la boîte, le chat est dans un état de __________.</description><guid isPermaLink="false">daily-drill-2026-01-09</guid><enclosure url="https://drive.google.com/uc?id=1HbXVIMNjU7cHk3Slkpo3-MtPs8WT6Ap5&amp;export=download" length="0" type="audio/mpeg"/><pubDate>Fri, 09 Jan 2026 06:00:00 +0000</pubDate></item></channel></rss>
