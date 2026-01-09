@@ -1,11 +1,11 @@
 import json
 import os
 import subprocess
-from datetime import datetime
-from typing import Dict
-from utils.gemini_client import GeminiClient
+
 from utils.drive_client import DriveClient
-from utils.prompts import get_listening_prompt, get_gauntlet_listening_prompt
+from utils.gemini_client import GeminiClient
+from utils.prompts import get_gauntlet_listening_prompt, get_listening_prompt
+
 
 class ListeningAgent:
     def __init__(self, client: GeminiClient, drive_client: DriveClient):
@@ -92,5 +92,7 @@ class ListeningAgent:
             print(f"ListeningAgent: Deleted local file {mp3_filepath}")
         except OSError as e:
             print(f"Warning: Could not delete temp file: {e}")
+
+        return drive_url
 
         return drive_url

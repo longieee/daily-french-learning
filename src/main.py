@@ -1,15 +1,16 @@
 import json
-import os
 import random
 from datetime import datetime
-from utils.state_manager import StateManager
-from utils.rss_generator import RSSGenerator
-from utils.gemini_client import GeminiClient
-from utils.drive_client import DriveClient
-from utils.episode_manager import EpisodeManager
-from utils.prompts import get_brainstorm_prompt
+
 from agents.listening_agent import ListeningAgent
 from agents.reading_agent import ReadingAgent
+from utils.drive_client import DriveClient
+from utils.episode_manager import EpisodeManager
+from utils.gemini_client import GeminiClient
+from utils.prompts import get_brainstorm_prompt
+from utils.rss_generator import RSSGenerator
+from utils.state_manager import StateManager
+
 
 def main():
     print("Starting L'Obsédé Daily Drill (Drive Edition)...")
@@ -111,5 +112,7 @@ def main():
         print(f"Critical Error during execution: {e}")
         exit(1)
 
+if __name__ == "__main__":
+    main()
 if __name__ == "__main__":
     main()

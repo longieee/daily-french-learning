@@ -1,6 +1,6 @@
-import os
 from utils.gemini_client import GeminiClient
-from utils.prompts import get_reading_prompt, get_gauntlet_reading_prompt
+from utils.prompts import get_gauntlet_reading_prompt, get_reading_prompt
+
 
 class ReadingAgent:
     def __init__(self, client: GeminiClient):
@@ -20,4 +20,5 @@ class ReadingAgent:
 
         essay_text = self.client.generate_content(prompt, model="gemini-3-pro-preview")
 
+        return essay_text
         return essay_text
