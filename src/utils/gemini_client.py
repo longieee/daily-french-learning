@@ -1,8 +1,11 @@
 import base64
 import os
+import time
 from typing import Dict, List
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 
 class GeminiClient:
@@ -11,6 +14,17 @@ class GeminiClient:
         if not self.api_key:
             print("Warning: GEMINI_API_KEY environment variable is not set")
         self.base_url = "https://generativelanguage.googleapis.com/v1beta/models"
+        
+        # Create session with retry logic
+        self.session = requests.Session()
+        retry_strategy = Retry(
+            total=3,
+            backoff_factor=2,
+            status_forcelist=[429, 500, 502, 503, 504],
+            allowed_methods=["POST"],
+        )
+        adapter = HTTPAdapter(max_retries=retry_strategy)
+        self.session.mount("https://", adapter)
 
     def generate_content(self, prompt: str, model: str = "gemini-3-pro-preview") -> str:
         if not self.api_key:
@@ -37,7 +51,7 @@ class GeminiClient:
             ]
         }
 
-        response = requests.post(url, json=payload)
+        response = self.session.post(url, json=payload, timeout=120)
         response.raise_for_status()
 
         try:
@@ -116,8 +130,21 @@ class GeminiClient:
             }
         }
 
-        response = requests.post(url, json=payload)
-        response.raise_for_status()
+        # TTS can take longer, use extended timeout with manual retry for connection errors
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                response = self.session.post(url, json=payload, timeout=300)
+                response.raise_for_status()
+                break
+            except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
+                if attempt < max_retries - 1:
+                    wait_time = 5 * (attempt + 1)
+                    print(f"TTS request failed (attempt {attempt + 1}/{max_retries}), retrying in {wait_time}s: {e}")
+                    time.sleep(wait_time)
+                else:
+                    print(f"TTS request failed after {max_retries} attempts")
+                    raise
 
         audio_data = b""
         try:
