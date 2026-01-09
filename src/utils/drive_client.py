@@ -1,8 +1,7 @@
 import os
-import json
-import base64
-from google.oauth2.credentials import Credentials
+
 from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
@@ -84,4 +83,5 @@ class DriveClient:
 
         except Exception as e:
             print(f"Error uploading to Drive: {e}")
+            raise
             raise

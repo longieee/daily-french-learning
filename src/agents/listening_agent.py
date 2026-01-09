@@ -1,5 +1,6 @@
 import json
 import os
+import subprocess
 from datetime import datetime
 from typing import Dict
 from utils.gemini_client import GeminiClient
@@ -46,23 +47,46 @@ class ListeningAgent:
         print("ListeningAgent: Synthesizing audio...")
         audio_data = self.client.generate_audio(script_json)
 
-        # 3. Save to Temporary File
-        filename = f"daily_drill_{date_str}.mp3"
+        # 3. Save to Temporary File and Convert to MP3
         temp_dir = "content/temp"
         os.makedirs(temp_dir, exist_ok=True)
-        filepath = os.path.join(temp_dir, filename)
+        
+        # Gemini TTS returns raw PCM audio, save as WAV first
+        wav_filename = f"daily_drill_{date_str}.wav"
+        wav_filepath = os.path.join(temp_dir, wav_filename)
+        
+        mp3_filename = f"daily_drill_{date_str}.mp3"
+        mp3_filepath = os.path.join(temp_dir, mp3_filename)
 
-        with open(filepath, "wb") as f:
+        with open(wav_filepath, "wb") as f:
             f.write(audio_data)
 
+        # Convert WAV to MP3 using ffmpeg
+        print("ListeningAgent: Converting audio to MP3...")
+        try:
+            subprocess.run([
+                "ffmpeg", "-y",
+                "-i", wav_filepath,
+                "-codec:a", "libmp3lame",
+                "-qscale:a", "2",
+                mp3_filepath
+            ], check=True, capture_output=True)
+        except subprocess.CalledProcessError as e:
+            print(f"Error converting audio: {e.stderr.decode()}")
+            raise
+        finally:
+            # Clean up WAV file
+            if os.path.exists(wav_filepath):
+                os.remove(wav_filepath)
+
         # 4. Upload to Drive
-        print(f"ListeningAgent: Uploading {filename} to Google Drive...")
-        drive_url = self.drive_client.upload_file(filepath, filename)
+        print(f"ListeningAgent: Uploading {mp3_filename} to Google Drive...")
+        drive_url = self.drive_client.upload_file(mp3_filepath, mp3_filename)
 
         # 5. Delete Local File
         try:
-            os.remove(filepath)
-            print(f"ListeningAgent: Deleted local file {filepath}")
+            os.remove(mp3_filepath)
+            print(f"ListeningAgent: Deleted local file {mp3_filepath}")
         except OSError as e:
             print(f"Warning: Could not delete temp file: {e}")
 
