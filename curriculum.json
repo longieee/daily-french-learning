@@ -255,67 +255,112 @@
     }
   },
   "mathematics": {
-    "Le Calcul Différentiel et Intégral": {
-      "description": "Calculus - derivatives, integrals, and their applications",
+    "I. Théorie de la Mesure et Intégration Avancée": {
+      "description": "Foundation for functional analysis - beyond basic Lebesgue",
       "subtopics": [
         {
-          "id": "calc-1",
-          "title": "Les Limites et la Continuité",
-          "episodes": 2,
-          "description": "Concept of limits, continuity, approaching infinity"
+          "id": "mesure-1",
+          "title": "Théorèmes de Convergence et Espaces $L^p$",
+          "episodes": 4,
+          "description": "Convergence dominée, Fatou, Egorov, Lusin. Dualité des espaces $L^p$, réflexivité, séparabilité, convolution et régularisation."
         },
         {
-          "id": "calc-2",
-          "title": "La Dérivée",
-          "episodes": 3,
-          "description": "Rate of change, derivative rules, applications"
-        },
-        {
-          "id": "calc-3",
-          "title": "L'Intégrale",
-          "episodes": 3,
-          "description": "Area under curves, fundamental theorem, techniques"
+          "id": "mesure-2",
+          "title": "Mesures de Radon et Théorème de Riesz",
+          "episodes": 4,
+          "description": "Mesures boréliennes régulières, représentation de Riesz-Markov, topologie vague et convergence faible des mesures."
         }
       ]
     },
-    "L'Algèbre Linéaire": {
-      "description": "Vectors, matrices, and linear transformations",
+    "II. Théorie des Distributions (Au sens de Schwartz)": {
+      "description": " rigorous framework for PDEs",
       "subtopics": [
         {
-          "id": "linalg-1",
-          "title": "Les Vecteurs",
-          "episodes": 2,
-          "description": "Vector operations, dot product, cross product"
+          "id": "dist-1",
+          "title": "Espace des Fonctions Test et Distributions",
+          "episodes": 5,
+          "description": "Topologie de $\\mathcal{D}(\\Omega)$, convergence au sens des distributions, support, ordre d'une distribution, multiplication par $C^\\infty$."
         },
         {
-          "id": "linalg-2",
-          "title": "Les Matrices",
-          "episodes": 2,
-          "description": "Matrix operations, determinants, inverses"
+          "id": "dist-2",
+          "title": "Dérivation et Opérations",
+          "episodes": 4,
+          "description": "Dérivées distributionnelles, produit de convolution des distributions, solutions élémentaires d'opérateurs différentiels."
         },
         {
-          "id": "linalg-3",
-          "title": "Les Transformations Linéaires",
-          "episodes": 2,
-          "description": "Eigenvalues, eigenvectors, diagonalization",
-          "advanced": true
+          "id": "dist-3",
+          "title": "Espace de Schwartz et Distributions Tempérées",
+          "episodes": 5,
+          "description": "L'espace $\\mathcal{S}(\\mathbb{R}^n)$, le dual $\\mathcal{S}'$, Transformée de Fourier dans $\\mathcal{S}'$, Paley-Wiener."
         }
       ]
     },
-    "La Théorie des Nombres": {
-      "description": "Properties of integers and prime numbers",
+    "III. Espaces de Sobolev et Formulation Variationnelle": {
+      "description": "The bread and butter of modern PDE theory",
       "subtopics": [
         {
-          "id": "numtheory-1",
-          "title": "Les Nombres Premiers",
-          "episodes": 2,
-          "description": "Prime factorization, infinitude of primes, sieve of Eratosthenes"
+          "id": "sobolev-1",
+          "title": "Espaces $W^{m,p}(\\Omega)$ et $H^s(\\mathbb{R}^n)$",
+          "episodes": 6,
+          "description": "Définitions, densité des fonctions lisses (Meyers-Serrin), extension, et théorèmes de trace."
         },
         {
-          "id": "numtheory-2",
-          "title": "L'Arithmétique Modulaire",
-          "episodes": 2,
-          "description": "Congruences, modular arithmetic, applications in cryptography"
+          "id": "sobolev-2",
+          "title": "Injections et Compacité",
+          "episodes": 6,
+          "description": "Inégalités de Sobolev-Gagliardo-Nirenberg, Théorème de Rellich-Kondrachov (compacité), Inégalité de Poincaré."
+        },
+        {
+          "id": "sobolev-3",
+          "title": "Problèmes aux Limites Elliptiques",
+          "episodes": 5,
+          "description": "Formulation faible, Théorème de Lax-Milgram, Alternative de Fredholm pour les EDP, Régularité elliptique."
+        }
+      ]
+    },
+    "IV. Théorie Spectrale et Opérateurs Non-Bornés": {
+      "description": "The core of your request. Post-Fredholm analysis.",
+      "subtopics": [
+        {
+          "id": "spec-1",
+          "title": "Opérateurs Non-Bornés et Adjoints",
+          "episodes": 5,
+          "description": "Domaine, graphe fermé, opérateur fermé, adjonction (critère de von Neumann), opérateurs symétriques vs auto-adjoints."
+        },
+        {
+          "id": "spec-2",
+          "title": "Le Spectre et la Résolvante",
+          "episodes": 5,
+          "description": "Spectre ponctuel, continu, résiduel. Critère de Weyl. Théorie spectrale des opérateurs compacts (Rappel rapide mais rigoureux)."
+        },
+        {
+          "id": "spec-3",
+          "title": "Théorème Spectral (Cas Auto-adjoint)",
+          "episodes": 7,
+          "description": "Mesures spectrales, intégrale stochastique par rapport à une mesure projecteur, Théorème spectral (forme multiplication et forme mesure)."
+        },
+        {
+          "id": "spec-4",
+          "title": "Semi-groupes et Évolution",
+          "episodes": 6,
+          "description": "Semi-groupes fortement continus ($C_0$), Théorème de Hille-Yosida, Théorème de Lumer-Phillips, application à l'équation de la chaleur et des ondes."
+        }
+      ]
+    },
+    "V. Algèbres d'Opérateurs (Introduction C*)": {
+      "description": "Abstraction of spectral theory",
+      "subtopics": [
+        {
+          "id": "alg-1",
+          "title": "Algèbres de Banach et Spectre",
+          "episodes": 4,
+          "description": "Idéaux, caractères, Rayon spectral (Gelfand), Transformée de Gelfand pour les algèbres commutatives."
+        },
+        {
+          "id": "alg-2",
+          "title": "Le Théorème Gelfand-Naimark",
+          "episodes": 4,
+          "description": "Représentation des $C^*$-algèbres commutatives, états et construction GNS."
         }
       ]
     }
