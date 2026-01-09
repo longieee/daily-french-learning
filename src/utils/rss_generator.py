@@ -1,8 +1,9 @@
-from datetime import datetime
 import os
 import shutil
+from datetime import datetime
+from typing import Dict, List
+
 from feedgen.feed import FeedGenerator
-from typing import List, Dict
 
 FEED_FILE = "feed.xml"
 # We keep the BASE_URL for the feed link itself, but audio links will come from Drive
@@ -65,4 +66,5 @@ class RSSGenerator:
         docs_dir = "docs"
         if os.path.exists(docs_dir):
             shutil.copy(FEED_FILE, os.path.join(docs_dir, FEED_FILE))
+            print(f"RSS feed copied to {docs_dir}/")
             print(f"RSS feed copied to {docs_dir}/")
