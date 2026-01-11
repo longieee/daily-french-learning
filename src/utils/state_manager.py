@@ -112,7 +112,10 @@ class StateManager:
         )
 
     def update_streak_and_date(self):
-        last_date_str = self.state.get("last_run_date", "1970-01-01")
+        last_date_str = self.state.get("last_run_date")
+        # Handle null/None case (fresh start or reset)
+        if not last_date_str:
+            last_date_str = "1970-01-01"
         try:
             last_date = datetime.strptime(last_date_str, "%Y-%m-%d").date()
         except ValueError:
