@@ -25,7 +25,24 @@
                 <p>Chargement du contenu...</p>
             </div>
         </section>
+<section id="exercises-section" class="hidden">
+    <h2>Exercices</h2>
+    <div id="exercises-container"></div>
+    <div id="score-display" class="hidden">
+        <p>Score: <span id="score">0</span>/<span id="total">0</span></p>
+    </div>
+</section>
     </main>
+
+    <!-- Vocabulary popup -->
+    <div id="vocab-popup" class="hidden">
+        <div class="vocab-content">
+            <span class="vocab-term"></span>
+            <span class="vocab-gender"></span>
+            <p class="vocab-definition"></p>
+            <p class="vocab-grammar"></p>
+        </div>
+    </div>
 
     <footer>
         <p>Généré automatiquement par Gemini</p>
@@ -34,6 +51,7 @@
     <script>
         let episodes = [];
         let currentIndex = 0;
+            let vocabMap = {};
 
         async function loadEpisodes() {
             try {
@@ -56,16 +74,212 @@
             document.getElementById('date-display').textContent = ep.date;
             document.getElementById('topic-title').textContent = ep.reading_topic || 'Lecture';
             
-            // Use reading_content if available, fallback to description
-            const content = ep.reading_content || ep.description || 'Contenu non disponible.';
+                    const content = ep.reading_content || ep.description || '';
+
+                    // Try to parse as JSON (new format)
+                    try {
+                        const data = JSON.parse(content);
+                        renderStructuredContent(data);
+                    } catch (e) {
+                        // Fallback to plain text (old format)
+                        renderPlainText(content);
+                    }
+                }
+
+                function renderStructuredContent(data) {
+                    // Build vocabulary lookup
+                    vocabMap = {};
+                    if (data.vocabulary) {
+                        data.vocabulary.forEach(v => {
+                            vocabMap[v.term.toLowerCase()] = v;
+                        });
+                    }
+
+                    // Render text with vocab highlights
+                    let html = data.text || '';
+                    html = html.replace(/\[\[([^\]]+)\]\]/g, (match, word) => {
+                        return `<span class="vocab-word" data-word="${word.toLowerCase()}">${word}</span>`;
+                    });
+
+                    // Convert line breaks
+                    html = html.split('\n\n').map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+
+                    document.getElementById('reading-content').innerHTML = html;
+
+                    // Add click handlers for vocab words
+                    document.querySelectorAll('.vocab-word').forEach(el => {
+                        el.addEventListener('click', showVocabPopup);
+                    });
+
+                    // Render exercises
+                    if (data.exercises && data.exercises.length > 0) {
+                        renderExercises(data.exercises);
+                        document.getElementById('exercises-section').classList.remove('hidden');
+                    } else {
+                        document.getElementById('exercises-section').classList.add('hidden');
+                    }
+                }
+
+                function renderPlainText(content) {
+                    const html = content.split('\n\n').map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+                    document.getElementById('reading-content').innerHTML = html;
+                    document.getElementById('exercises-section').classList.add('hidden');
+                }
+
+                function showVocabPopup(e) {
+                    const word = e.target.dataset.word;
+                    const vocab = vocabMap[word];
+
+                    if (!vocab) return;
+
+                    const popup = document.getElementById('vocab-popup');
+                    popup.querySelector('.vocab-term').textContent = vocab.term;
+                    popup.querySelector('.vocab-gender').textContent = vocab.gender ? `(${vocab.gender})` : '';
+                    popup.querySelector('.vocab-definition').textContent = vocab.definition;
+                    popup.querySelector('.vocab-grammar').textContent = vocab.grammar_note || '';
+
+                    // Position near click
+                    const rect = e.target.getBoundingClientRect();
+                    popup.style.left = `${Math.min(rect.left, window.innerWidth - 280)}px`;
+                    popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
+
+                    popup.classList.remove('hidden');
+
+                    // Close on click outside
+                    setTimeout(() => {
+                        document.addEventListener('click', closeVocabPopup, { once: true });
+                    }, 10);
+                }
+
+                function closeVocabPopup(e) {
+                    if (!e.target.classList.contains('vocab-word')) {
+                        document.getElementById('vocab-popup').classList.add('hidden');
+                    }
+                }
+
+                function renderExercises(exercises) {
+                    const container = document.getElementById('exercises-container');
+                    container.innerHTML = '';
+
+                    exercises.forEach((ex, i) => {
+                        const div = document.createElement('div');
+                        div.className = 'exercise';
+                        div.dataset.index = i;
+                        div.dataset.answered = 'false';
+
+                        let html = `<p class="exercise-number">Exercice ${i + 1}</p>`;
+
+                        switch (ex.type) {
+                            case 'fill_blank':
+                                html += `
+                            <p class="exercise-question">${ex.question.replace('______', '<input type="text" class="fill-input" placeholder="...">')}</p>
+                            ${ex.hint ? `<p class="exercise-hint">💡 ${ex.hint}</p>` : ''}
+                            <button class="check-btn" onclick="checkFillBlank(${i}, '${ex.answer}')">Vérifier</button>
+                            <p class="feedback hidden"></p>
+                        `;
+                                break;
+
+                            case 'true_false':
+                                html += `
+                            <p class="exercise-question">${ex.question}</p>
+                            <div class="tf-buttons">
+                                <button class="tf-btn" onclick="checkTrueFalse(${i}, true, ${ex.answer})">Vrai</button>
+                                <button class="tf-btn" onclick="checkTrueFalse(${i}, false, ${ex.answer})">Faux</button>
+                            </div>
+                            <p class="feedback hidden"></p>
+                        `;
+                                break;
+
+                            case 'multiple_choice':
+                                html += `
+                            <p class="exercise-question">${ex.question}</p>
+                            <div class="mc-options">
+                                ${ex.options.map((opt, j) => `
+                                    <button class="mc-btn" onclick="checkMultipleChoice(${i}, '${opt}', '${ex.answer}')">${opt}</button>
+                                `).join('')}
+                            </div>
+                            <p class="feedback hidden"></p>
+                        `;
+                                break;
+
+                            case 'translation':
+                                html += `
+                            <p class="exercise-question">Traduisez: "${ex.question}"</p>
+                            <input type="text" class="translation-input" placeholder="En français...">
+                            <button class="check-btn" onclick="checkTranslation(${i}, '${ex.answer.replace(/'/g, "\\'")}')">Vérifier</button>
+                            <p class="feedback hidden"></p>
+                        `;
+                                break;
+
+                            default:
+                                html += `<p class="exercise-question">${ex.question}</p>`;
+                        }
+
+                        div.innerHTML = html;
+                        container.appendChild(div);
+                    });
+                }
+
+                function showFeedback(exerciseIndex, isCorrect, message) {
+                    const div = document.querySelector(`.exercise[data-index="${exerciseIndex}"]`);
+                    const feedback = div.querySelector('.feedback');
+                    feedback.textContent = message;
+                    feedback.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+                    div.dataset.answered = 'true';
+                    div.classList.add(isCorrect ? 'answered-correct' : 'answered-incorrect');
+                }
+
+                function checkFillBlank(index, correctAnswer) {
+                    const div = document.querySelector(`.exercise[data-index="${index}"]`);
+                    const input = div.querySelector('.fill-input');
+                    const userAnswer = input.value.trim().toLowerCase();
+                    const isCorrect = userAnswer === correctAnswer.toLowerCase();
+
+                    showFeedback(index, isCorrect,
+                        isCorrect ? '✓ Correct!' : `✗ La réponse est: ${correctAnswer}`);
+                }
+
+                function checkTrueFalse(index, userAnswer, correctAnswer) {
+                    const isCorrect = userAnswer === correctAnswer;
+                    const exercises = getCurrentExercises();
+                    const explanation = exercises[index]?.explanation || '';
+
+                    showFeedback(index, isCorrect,
+                        isCorrect ? '✓ Correct!' : `✗ ${explanation || (correctAnswer ? 'Vrai' : 'Faux')}`);
+                }
+
+                function checkMultipleChoice(index, userAnswer, correctAnswer) {
+                    const isCorrect = userAnswer === correctAnswer;
+                    const exercises = getCurrentExercises();
+                    const explanation = exercises[index]?.explanation || '';
+
+                    showFeedback(index, isCorrect,
+                        isCorrect ? '✓ Correct!' : `✗ La réponse est: ${correctAnswer}. ${explanation}`);
+                }
+
+                function checkTranslation(index, correctAnswer) {
+                    const div = document.querySelector(`.exercise[data-index="${index}"]`);
+                    const input = div.querySelector('.translation-input');
+                    const userAnswer = input.value.trim().toLowerCase();
+                    const correct = correctAnswer.toLowerCase();
+
+                    // Simple matching (could be improved with fuzzy matching)
+                    const isCorrect = userAnswer === correct ||
+                        userAnswer.replace(/['']/g, "'") === correct.replace(/['']/g, "'");
             
-            // Convert plain text to HTML paragraphs
-            const htmlContent = content
-                .split('\n\n')
-                .map(para => `<p>${para.replace(/\n/g, '<br>')}</p>`)
-                .join('');
-            
-            document.getElementById('reading-content').innerHTML = htmlContent;
+            showFeedback(index, isCorrect,
+                isCorrect ? '✓ Correct!' : `✗ Réponse acceptée: ${correctAnswer}`);
+        }
+
+            function getCurrentExercises() {
+                try {
+                    const ep = episodes[currentIndex];
+                    const content = ep.reading_content || ep.description || '';
+                    const data = JSON.parse(content);
+                    return data.exercises || [];
+                } catch (e) {
+                    return [];
+                }
         }
 
         function updateNav() {

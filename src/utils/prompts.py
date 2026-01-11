@@ -62,33 +62,54 @@ Task:
 3. Make it feel like an exciting lecture - use rhetorical questions, exclamations, vivid examples.
 4. Include the mathematical/physical intuition, not just formulas.
 
-CRITICAL: Output in PLAIN TEXT only. NO markdown symbols (no #, *, **, -, etc.).
-Use line breaks and spacing for structure instead.
+CRITICAL: Output as JSON with the following structure.
 
-Output Format (PLAIN TEXT):
+Output Format (JSON ONLY):
+{{
+    "title": "Subtopic Title",
+    "level": "{level}",
+    "text": "The full essay text in French. Mark vocabulary words with [[word]] brackets.",
+    "vocabulary": [
+        {{"term": "word", "gender": "m/f", "definition": "English definition", "grammar_note": "optional grammar tip"}}
+    ],
+    "exercises": [
+        {{
+            "type": "fill_blank",
+            "question": "L'énergie est ______ dans l'univers.",
+            "answer": "conservée",
+            "hint": "Think about the first law"
+        }},
+        {{
+            "type": "true_false",
+            "question": "L'entropie diminue toujours.",
+            "answer": false,
+            "explanation": "L'entropie augmente toujours selon la deuxième loi."
+        }},
+        {{
+            "type": "multiple_choice",
+            "question": "Quelle loi parle de la conservation?",
+            "options": ["Première", "Deuxième", "Troisième"],
+            "answer": "Première",
+            "explanation": "La première loi traite de la conservation de l'énergie."
+        }},
+        {{
+            "type": "translation",
+            "question": "Energy cannot be destroyed.",
+            "answer": "L'énergie ne peut pas être détruite.",
+            "accept_variations": ["L'énergie ne peut être détruite"]
+        }}
+    ]
+}}
 
-[Subtopic Title] ({level})
-
-LE TEXTE
-
-[The Essay in French - written as an engaging lecture/monologue with passion and drama]
-
-LABORATOIRE DE VOCABULAIRE
-
-[Term] (gender): [English definition]
-(list 10-15 key terms)
-
-EXERCICES
-
-Vary the exercise types. Include 5-6 exercises from these options:
-- Fill-in-the-blank: Complete the sentence with the missing word
-- Translation: Translate this sentence to French
-- True/False: Statement about the text (Vrai ou Faux?)
-- Multiple choice: Question with 3-4 options
-- Short answer: Answer in French based on the text
-- Conjugation: Conjugate the verb in the correct tense
-- Calculation: A simple calculation using French number vocabulary
+Guidelines:
+- Mark 10-15 vocabulary words in the text using [[word]] brackets
+- Include exactly those words in the vocabulary array with definitions
+- Include 5-6 exercises with correct answers
+- For fill_blank: leave exactly one ____ blank in the question
+- For multiple_choice: include 3-4 options
+- Vary exercise types for engagement
 """
+
 
 
 def get_gauntlet_listening_prompt(level: str, topics_summary: str) -> str:

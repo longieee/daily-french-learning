@@ -9,20 +9,30 @@
 :root {
     --primary: #2c3e50;
     --accent: #3498db;
+    --accent-light: #5dade2;
+        --success: #27ae60;
+        --error: #e74c3c;
     --bg: #fefefe;
     --text: #2c3e50;
     --text-light: #7f8c8d;
     --border: #ecf0f1;
+    --vocab-bg: #fff9e6;
+        --vocab-border: #f1c40f;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --primary: #ecf0f1;
         --accent: #5dade2;
+        --accent-light: #85c1e9;
+            --success: #2ecc71;
+            --error: #e74c3c;
         --bg: #1a1a2e;
         --text: #ecf0f1;
         --text-light: #bdc3c7;
         --border: #34495e;
+        --vocab-bg: #2d2d44;
+            --vocab-border: #f39c12;
     }
 }
 
@@ -110,13 +120,190 @@ main {
     text-align: justify;
 }
 
-/* French text styling */
-#reading-content p:first-of-type::first-letter {
-    font-size: 2.5rem;
-    float: left;
-    line-height: 1;
-    margin-right: 0.15rem;
+/* Vocabulary word highlighting */
+.vocab-word {
+    background: linear-gradient(180deg, transparent 60%, var(--vocab-bg) 60%);
+    border-bottom: 2px dashed var(--vocab-border);
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0 2px;
+}
+
+.vocab-word:hover {
+    background: var(--vocab-bg);
+    border-bottom-style: solid;
+}
+
+/* Vocabulary popup */
+#vocab-popup {
+    position: absolute;
+    z-index: 1000;
+    background: var(--bg);
+    border: 2px solid var(--vocab-border);
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: 280px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+#vocab-popup .vocab-term {
+    font-weight: bold;
+    font-size: 1.1rem;
     color: var(--accent);
+}
+
+#vocab-popup .vocab-gender {
+    font-style: italic;
+    color: var(--text-light);
+    margin-left: 0.5rem;
+}
+
+#vocab-popup .vocab-definition {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+#vocab-popup .vocab-grammar {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* Exercises section */
+#exercises-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--border);
+}
+
+#exercises-section h2 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.exercise {
+    background: var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+}
+
+.exercise-number {
+    font-weight: bold;
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.exercise-question {
+    margin-bottom: 0.75rem;
+}
+
+.exercise-hint {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+/* Input fields */
+.fill-input,
+.translation-input {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.4rem 0.6rem;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg);
+    color: var(--text);
+    min-width: 120px;
+}
+
+.translation-input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.fill-input:focus,
+.translation-input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* Buttons */
+.check-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.check-btn:hover {
+    opacity: 0.9;
+}
+
+.tf-buttons,
+.mc-options {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.tf-btn,
+.mc-btn {
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 0.5rem 1.25rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.95rem;
+        transition: all 0.2s;
+    }
+    
+    .tf-btn:hover,
+    .mc-btn:hover {
+        background: var(--accent);
+        color: white;
+    }
+    
+    /* Feedback */
+    .feedback {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 4px;
+        font-size: 0.95rem;
+    }
+    
+    .feedback.correct {
+        background: rgba(39, 174, 96, 0.15);
+        color: var(--success);
+        border: 1px solid var(--success);
+    }
+    
+    .feedback.incorrect {
+        background: rgba(231, 76, 60, 0.15);
+        color: var(--error);
+        border: 1px solid var(--error);
+    }
+    
+    .exercise.answered-correct {
+        border-left: 4px solid var(--success);
+    }
+    
+    .exercise.answered-incorrect {
+        border-left: 4px solid var(--error);
+    }
+    
+    /* Utilities */
+    .hidden {
+        display: none !important;
 }
 
 footer {
