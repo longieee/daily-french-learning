@@ -1,5 +1,4 @@
 import os
-import shutil
 from datetime import datetime
 from typing import Dict, List
 
@@ -61,10 +60,4 @@ class RSSGenerator:
 
         # Generate feed file
         self.fg.rss_file(FEED_FILE)
-        
-        # Also copy to docs folder for GitHub Pages
-        docs_dir = "docs"
-        if os.path.exists(docs_dir):
-            shutil.copy(FEED_FILE, os.path.join(docs_dir, FEED_FILE))
-            print(f"RSS feed copied to {docs_dir}/")
-            print(f"RSS feed copied to {docs_dir}/")
+
