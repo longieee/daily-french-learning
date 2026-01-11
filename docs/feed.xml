@@ -1,227 +1,46 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>L'Obsédé - Daily French Drill</title><link>https://longieee.github.io/daily-french-learning</link><description>Automated French learning: Literature, Philosophy, Math, and Physics.</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://longieee.github.io/daily-french-learning/artwork.jpg</url><title>L'Obsédé - Daily French Drill</title><link>https://longieee.github.io/daily-french-learning</link></image><language>fr</language><lastBuildDate>Sun, 11 Jan 2026 06:06:09 +0000</lastBuildDate><itunes:author>The Machine</itunes:author><itunes:category text="Education"><itunes:category text="Language Courses"/></itunes:category><itunes:image href="https://longieee.github.io/daily-french-learning/artwork.jpg"/><itunes:explicit>no</itunes:explicit><itunes:owner><itunes:name>The Machine</itunes:name><itunes:email>bot@machine.com</itunes:email></itunes:owner><itunes:summary>Daily automated French learning podcast covering Literature, Philosophy, Mathematics, and Physics. Each episode features listening comprehension and vocabulary building.</itunes:summary><item><title>Drill: 2026-01-09 - Candide - Voltaire: Le Château et l'Expulsion (1/2)</title><link>https://drive.google.com/uc?id=1IAPX6dxGMrBwR7_0nCxF_7DijyI_-lN2&amp;export=download</link><description>Les Matrices (Episode 1 of 2) (A2)
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>L'Obsédé - Daily French Drill</title><link>https://longieee.github.io/daily-french-learning</link><description>Automated French learning: Literature, Philosophy, Math, and Physics.</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://longieee.github.io/daily-french-learning/artwork.jpg</url><title>L'Obsédé - Daily French Drill</title><link>https://longieee.github.io/daily-french-learning</link></image><language>fr</language><lastBuildDate>Sun, 11 Jan 2026 15:24:51 +0000</lastBuildDate><itunes:author>The Machine</itunes:author><itunes:category text="Education"><itunes:category text="Language Courses"/></itunes:category><itunes:image href="https://longieee.github.io/daily-french-learning/artwork.jpg"/><itunes:explicit>no</itunes:explicit><itunes:owner><itunes:name>The Machine</itunes:name><itunes:email>bot@machine.com</itunes:email></itunes:owner><itunes:summary>Daily automated French learning podcast covering Literature, Philosophy, Mathematics, and Physics. Each episode features listening comprehension and vocabulary building.</itunes:summary><item><title>Drill: 2026-01-11 - Le Rationalisme Français: Cogito Ergo Sum (1/2)</title><link>https://drive.google.com/uc?id=1JTGTs15zEYub8wI7BsKdmV8-JxFFHPYf&amp;export=download</link><description>[EN] Welcome to Episode 1 of our series on French Rationalism. Today, we meet René Descartes in the 17th century. We are looking for one thing: la vérité—the truth.
 
-LE TEXTE
+[FR] Bonjour. Aujourd'hui, nous sommes en France, mais nous sommes aussi dans l'esprit d'un homme très célèbre. Il s'appelle René Descartes. C'est l'année mille-six-cent-trente-sept (1637). Descartes a un problème. Il est intelligent, il a étudié les mathématiques, la philosophie et les sciences. Mais il n'est pas satisfait.
 
-Silence ! S'il vous plaît, silence dans la salle !
+[FR] Il regarde sa bibliothèque. Il regarde ses livres. Il pense : « J'ai appris beaucoup de choses. Mais est-ce que ces choses sont vraies ? Vraiment vraies ? Ou est-ce que ce sont seulement des opinions ? » Descartes veut construire une maison solide. Mais pour construire une maison solide, il faut une fondation parfaite. Il cherche une certitude absolue.
 
-Regardez le tableau noir. Regardez bien. Qu'est-ce que vous voyez ? Des nombres ? Des boîtes carrées ? Non ! Vous êtes aveugles ! Ce ne sont pas simplement des nombres. Aujourd'hui, nous commençons un voyage magnifique et dangereux. Aujourd'hui, nous touchons le cœur de l'univers. Aujourd'hui, nous parlons des Matrices !
+[EN] To find this absolute certainty, Descartes uses a radical method: Le Doute Méthodique—Methodical Doubt.
 
-Écoutez-moi bien. Une matrice n'est pas une simple liste. C'est une machine. C'est une force qui change l'espace. Imaginez une matrice comme un robot. Vous donnez un vecteur au robot, et la matrice transforme ce vecteur. Elle tourne, elle grandit, elle change la direction. C'est incroyable, n'est-ce pas ?
+[FR] Le doute. C'est un mot très important. Douter, c'est dire « je ne suis pas sûr ». Descartes décide de douter de tout. Absolument tout. Il commence par ses sens. Les sens, ce sont la vue, l'ouïe, le toucher. Par exemple, je vois une table devant moi. Je touche la table. Elle est dure. Elle est réelle, n'est-ce pas ?
 
-Mais attention ! Nous devons apprendre les règles. C'est comme la grammaire, mais pour les mathématiques.
+[FR] Mais attendez. Descartes dit : « Parfois, mes sens me trompent. » Par exemple, quand je regarde un bâton dans l'eau, le bâton semble brisé, il semble courbé. Mais c'est une illusion d'optique. Si mes yeux me mentent une fois, peut-être qu'ils me mentent toujours. Donc, je ne peux pas faire confiance à mes sens.
 
-D'abord, nous avons la structure. Une matrice a des lignes horizontales et des colonnes verticales. Nous disons qu'une matrice est "deux par deux" ou "trois par trois". C'est sa taille.
+[FR] Il va plus loin. Beaucoup plus loin. Il se pose une question effrayante : « Est-ce que je dors ? » Quand je rêve, je vois des choses. Je vois des monstres, je vois des paysages, je parle avec des amis. Dans le rêve, tout semble réel. C'est très réaliste. Mais quand je me réveille, je réalise que c'était une illusion.
 
-Ensuite, les opérations. L'addition est très facile. Vous avez deux matrices ? Vous additionnez les nombres à la même position. C'est simple, comme manger une baguette. Mais la multiplication... ah, mes amis, la multiplication est une bête sauvage !
+[FR] Alors, Descartes demande : « Comment savoir si je ne rêve pas maintenant ? Peut-être que cette leçon n'existe pas. Peut-être que vous n'écoutez pas. Peut-être que tout est un grand rêve. » C'est le doute total.
 
-Pourquoi ? Parce que l'ordre est important. Si vous avez la matrice A et la matrice B, écoutez bien : A fois B n'est pas égal à B fois A ! Jamais ! Enfin, presque jamais. C'est un choc, non ? Dans l'arithmétique normale, deux fois trois égale trois fois deux. Mais ici, dans le monde de l'Algèbre Linéaire, tout est différent. C'est une révolution ! Pour multiplier, nous prenons la ligne de la première matrice et nous la plongeons dans la colonne de la deuxième. C'est une danse complexe.
+[EN] He has stripped away the physical world. Now, imagine a chaotic void where nothing is certain.
 
-Maintenant, parlons de la chose la plus importante. Le Déterminant.
+[FR] Imaginez le vide. Il n'y a pas de corps. Il n'y a pas de monde. Il n'y a pas de ciel. Il n'y a pas de mathématiques, car peut-être qu'un « Malin Génie », un démon très puissant, me trompe. Peut-être qu'il me fait croire que deux plus deux font quatre, mais c'est faux.
 
-Le déterminant est un nombre unique. C'est l'âme de la matrice. Pour une matrice deux par deux, la formule est simple : a fois d moins b fois c. Mais que signifie ce nombre ? Si le déterminant est grand, la matrice grandit l'espace.
+[FR] Descartes est seul dans le noir. Il doute de tout. C'est vertigineux. Il a peur. Il cherche juste un point fixe. Une petite chose qui est indubitable—impossible à douter.
 
-Mais si le déterminant est zéro... c'est la catastrophe !
+[FR] Soudain, il trouve une lumière. Écoutez bien la logique. C'est simple, mais génial. Descartes pense : « Je peux douter de mes yeux. Je peux douter de mon corps. Je peux douter du monde. Mais... pour douter, je dois penser. »
 
-Si le déterminant est zéro, la matrice détruit l'information. L'espace devient plat. C'est fini. Nous appelons cela une matrice "singulière".
+[FR] Si je doute, je pense. Le doute est une forme de pensée. Et si je pense... il faut que j'existe. Le néant ne peut pas penser. Le rien ne peut pas douter. Pour être trompé par un démon, je dois exister.
 
-Pourquoi est-ce tragique ? Parce que nous voulons souvent revenir en arrière. Nous voulons trouver l'Inverse. L'inverse est la machine qui annule l'action. Si la matrice A fait une action, l'inverse de A annule l'action. Mais, si le déterminant est zéro, l'inverse n'existe pas. C'est impossible. La porte est fermée à clé !
+[EN] This leads to the most famous phrase in Western philosophy.
 
-Alors, mes étudiants, prenez vos stylos. Nous allons calculer. Nous allons trouver ce déterminant. Nous allons voir si la matrice est vivante ou morte. Êtes-vous prêts ? Allons-y !
+[FR] Il formule cette découverte en latin : « Cogito, ergo sum ». En français, nous disons : « Je pense, donc je suis ». Répétez avec moi, c'est important : Je pense, donc je suis.
 
-LABORATOIRE DE VOCABULAIRE
+[FR] « Je pense » : c'est l'action immédiate. C'est la conscience. « Donc » : c'est la conséquence logique. « Je suis » : c'est l'existence. Même si je rêve, je suis. Même si je suis fou, je suis. C'est la première brique de la maison. C'est la première vérité.
 
-une matrice (f): a matrix (rectangular array of numbers)
-une ligne (f): a row
-une colonne (f): a column
-un tableau (m): a board (blackboard) or a table/chart
-une taille (f): a size
-un nombre (m): a number
-une opération (f): an operation
-ajouter (v): to add
-multiplier (v): to multiply
-égal (adj): equal
-un déterminant (m): a determinant (scalar value of a matrix)
-zéro (m): zero
-inverse (adj/n): inverse
-annuler (v): to undo / to cancel
-calculer (v): to calculate
+[FR] Maintenant, faisons une petite analyse ensemble. Je vais vous poser des questions. Essayez de répondre avant moi.
 
-EXERCICES
+[FR] Question un : Pourquoi Descartes ne fait-il pas confiance à ses sens ? ... Parce que les sens nous trompent parfois. Comme l'illusion d'optique.
 
-1. Vrai ou Faux ?
-Dans la multiplication des matrices, A fois B est toujours égal à B fois A.
+[FR] Question deux : Quelle est la seule chose que Descartes ne peut pas douter ? ... Il ne peut pas douter de sa propre pensée. Il ne peut pas douter qu'il est un être pensant.
 
-2. Complétez la phrase (Fill-in-the-blank):
-Si le déterminant est ________, la matrice n'a pas d'inverse.
+[FR] C'est intéressant, n'est-ce pas ? Pour Descartes, l'esprit est plus certain que le corps. Je suis plus sûr de mon esprit que de mes mains ou de mes pieds. C'est le début du Rationalisme.
 
-3. Calcul:
-Calculez le déterminant de cette matrice :
-| 2  1 |
-| 1  3 |
-(Formule : a*d - b*c)
+[EN] He has found the foundation. But what can he build on it? That is for the next episode.
 
-4. Traduction:
-Translate this sentence into French:
-"The determinant is a very important number."
+[FR] Pour finir, résumons les points clés de cette leçon. Un : Descartes cherche la vérité absolue. Deux : Il utilise « le doute méthodique » pour éliminer le faux. Trois : Il découvre que s'il doute, il pense. Quatre : La conclusion est « Je pense, donc je suis ».
 
-5. Choix Multiple:
-Une matrice a des lignes horizontales et des...
-a) cercles
-b) colonnes verticales
-c) triangles
-d) couleurs
-
-6. Conjugaison:
-Conjuguez le verbe "calculer" au Présent (Nous):
-Nous ________ le déterminant maintenant.</description><guid isPermaLink="false">daily-drill-2026-01-09</guid><enclosure url="https://drive.google.com/uc?id=1IAPX6dxGMrBwR7_0nCxF_7DijyI_-lN2&amp;export=download" length="10000000" type="audio/mpeg"/><pubDate>Fri, 09 Jan 2026 06:00:00 +0000</pubDate></item><item><title>Drill: 2026-01-10 - Candide - Voltaire: Le Château et l'Expulsion (2/2)</title><link>https://drive.google.com/uc?id=1xY1HvfvWzVur_YSoFWr_3Em2QEF8zZ9e&amp;export=download</link><description>Les Lois de la Thermodynamique (A2)
-
-LE TEXTE
-
-Bonjour mes étudiants ! Asseyez-vous ! Vite ! Aujourd'hui, nous commençons un voyage dangereux. Nous allons parler de la Thermodynamique. Ce n est pas seulement de la physique. Non ! C est la philosophie de la vie et de la mort de l univers. Écoutez-moi bien car ces règles contrôlent tout.
-
-Imaginez une machine. Imaginez votre corps. Imaginez le soleil. Tout fonctionne avec ces trois lois.
-
-La Première Loi : La Conservation.
-C est magnifique. L énergie est éternelle. Elle ne meurt jamais. Vous comprenez ? Jamais ! Antoine Lavoisier a dit une phrase célèbre : Rien ne se perd, rien ne se crée, tout se transforme.
-Par exemple, vous mangez une pomme. Cette pomme a de l énergie chimique. Votre corps utilise cette énergie pour courir. L énergie devient du mouvement et de la chaleur. L énergie totale reste la même. C est une promesse de la nature. L univers garde toujours son compte en banque d énergie exact.
-
-La Deuxième Loi : L Entropie.
-Ah, maintenant, c est le drame ! C est la tragédie ! La première loi dit que l énergie reste là, mais la deuxième loi dit que la qualité de l énergie change. L entropie, c est le désordre. Le chaos.
-L univers préfère le désordre. Regardez votre chambre d étudiant. Est-ce qu elle reste propre toute seule ? Non ! Elle devient sale et désordonnée. C est naturel.
-Si vous mettez un glaçon chaud dans votre main, la chaleur va de votre main vers la glace. La chaleur voyage toujours du chaud vers le froid. Jamais le contraire ! Le café devient froid. Les bâtiments tombent en ruine. Le désordre augmente toujours. C est triste, mais c est vrai. Le temps avance et le chaos gagne.
-
-La Troisième Loi : Le Zéro Absolu.
-Maintenant, imaginez le froid extrême. Si nous descendons la température, les atomes bougent moins vite. Ils sont fatigués. À moins 273,15 degrés Celsius, c est le Zéro Absolu.
-À ce point, théoriquement, le mouvement s arrête. C est le silence parfait. L entropie est zéro. Mais, il y a un problème. Nous ne pouvons pas toucher ce point. C est comme l horizon. On s approche, on s approche, mais on n arrive jamais. La nature nous interdit la perfection du silence.
-
-Alors, mes amis, l énergie reste, le désordre monte, et le calme parfait est impossible. C est notre réalité !
-
-LABORATOIRE DE VOCABULAIRE
-
-la loi (f) : the law
-la chaleur (f) : heat
-le désordre (m) : disorder
-le mouvement (m) : movement
-le glaçon (m) : ice cube
-la machine (f) : machine
-le niveau (m) : level
-augmenter (v) : to increase
-interdire (v) : to forbid
-garder (v) : to keep
-le corps (m) : body
-froid (adj) : cold
-chaud (adj) : hot
-vide (adj) : empty
-se transformer (v) : to transform oneself
-
-EXERCICES
-
-1. Vrai ou Faux ?
-Indiquez si la phrase est vraie ou fausse selon le professeur.
-A. L énergie peut mourir et disparaître.
-B. La chaleur voyage du froid vers le chaud naturellement.
-C. Le désordre de l univers augmente toujours.
-D. Il est possible d atteindre le Zéro Absolu facilement.
-
-2. Complétez les phrases
-Utilisez les mots : pomme, chaos, transforme, interdite.
-A. L énergie ne disparaît pas, elle se _______.
-B. La perfection du zéro absolu est _______ par la nature.
-C. L entropie est le nom scientifique pour le _______.
-D. L énergie chimique vient d une _______ dans l exemple du professeur.
-
-3. Traduction
-Traduisez ces phrases en français.
-A. Heat goes from hot to cold.
-B. The atoms stop moving.
-C. Everything transforms.
-
-4. Conjugaison
-Mettez le verbe entre parenthèses au Présent.
-A. La température (descendre) _______ lentement.
-B. Nous (finir) _______ le cours maintenant.
-C. Les étudiants (comprendre) _______ la leçon.
-D. Je (dire) _______ que c est important.
-
-5. Choix Multiple
-Quelle est la définition de la Première Loi ?
-A. Le désordre gagne toujours.
-B. L énergie se conserve et se transforme.
-C. Le froid est impossible.
-
-6. Réponse courte
-Pourquoi votre chambre devient-elle désordonnée selon la physique ? Répondez en une phrase simple en français.</description><guid isPermaLink="false">daily-drill-2026-01-10</guid><enclosure url="https://drive.google.com/uc?id=1xY1HvfvWzVur_YSoFWr_3Em2QEF8zZ9e&amp;export=download" length="5037597" type="audio/mpeg"/><pubDate>Sat, 10 Jan 2026 06:00:00 +0000</pubDate></item><item><title>Drill: 2026-01-11 - Huis Clos - Jean-Paul Sartre: Les Trois Damnés (1/2)</title><link>https://drive.google.com/uc?id=1SsdtdIxAWCwGs1wAF-R_UCrEtb5inATW&amp;export=download</link><description>Les Lois de la Thermodynamique (A2)
-
-LE TEXTE
-
-Silence dans la salle ! Asseyez-vous tout de suite ! Mes chers étudiants, regardez-moi. Aujourd'hui est un jour très important. C'est l'Épisode Deux de notre grande aventure. La dernière fois, nous avons parlé de la température et de la chaleur. Vous vous souvenez ? Bien. Mais aujourd'hui, nous entrons dans le cœur du sujet. Aujourd'hui, nous parlons des Règles du Jeu. Nous parlons des LOIS DE LA THERMODYNAMIQUE !
-
-Écoutez bien, car l'univers obéit à ces lois. Vous devez les comprendre pour comprendre la vie !
-
-Commençons avec la Première Loi. C'est la loi de la conservation. C'est une idée magnifique. Imaginez l'énergie. L'énergie est partout. La Première Loi dit une chose simple : L'énergie ne meurt jamais ! Elle ne disparaît pas. Elle change juste de costume. C'est comme de la magie, mais c'est de la physique ! Par exemple, vous mangez une pomme. C'est de l'énergie chimique. Ensuite, vous courez. L'énergie devient du mouvement. L'énergie totale reste la même. On ne peut pas créer de l'énergie, et on ne peut pas la détruire. Tout se transforme ! C'est clair ? Notez cela !
-
-Maintenant, attention ! Voici la Deuxième Loi. C'est ma préférée, mais elle est tragique. C'est la loi du chaos. En physique, on appelle ce chaos l'entropie. La loi dit : Le désordre augmente toujours !
-
-Regardez une tasse de café chaud sur ma table. La chaleur sort de la tasse. Elle va dans l'air. Le café devient froid. Est-ce que la chaleur revient dans la tasse toute seule ? Jamais ! C'est impossible ! L'univers préfère le désordre. Si vous cassez un verre, il est cassé. Il ne se répare pas tout seul. Le temps marche dans une seule direction. Vers le chaos ! C'est triste, mais c'est la réalité. L'entropie gagne toujours à la fin.
-
-Enfin, la Troisième Loi. C'est la loi de la limite. Imaginez le froid extrême. Le froid parfait. On appelle ce point le Zéro Absolu. À cette température, tout s'arrête. Les atomes ne bougent plus. C'est le silence total. Mais voici le secret : on ne peut jamais arriver au zéro absolu. On peut s'approcher très près, mais toucher cette limite est interdit par la nature. C'est comme un mur invisible.
-
-Alors, mes amis, résumons la situation.
-Un : L'énergie reste constante. On ne gagne pas.
-Deux : Le désordre augmente. On perd de la qualité.
-Trois : On ne peut pas arrêter le jeu totalement.
-
-C'est dramatique, n'est-ce pas ? La physique est une tragédie grecque ! Étudiez ces lois pour la prochaine fois. Dans le prochain épisode, nous allons utiliser ces règles pour construire des moteurs ! Allez, au travail !
-
-LABORATOIRE DE VOCABULAIRE
-
-la loi (f): law
-l'univers (m): universe
-la conservation (f): conservation (staying the same)
-l'énergie (f): energy
-mourir (v): to die
-disparaître (v): to disappear
-transformer (v): to transform
-le désordre (m): disorder / chaos
-l'entropie (f): entropy
-augmenter (v): to increase
-casser (v): to break
-le verre (m): glass
-le sens (m): direction / way
-le zéro absolu (m): absolute zero
-le mouvement (m): movement
-
-EXERCICES
-
-1. Vrai ou Faux ?
-Lisez les phrases et répondez.
-a. L'énergie peut disparaître totalement.
-b. L'entropie est le nom pour l'ordre parfait.
-c. La chaleur va naturellement du chaud vers le froid.
-
-2. Complétez les phrases
-Utilisez les mots : désordre, constante, limite.
-a. Dans l'univers, l'énergie reste __________.
-b. Le __________ augmente toujours avec le temps.
-c. Le zéro absolu est une __________ impossible à toucher.
-
-3. Choix multiple
-Qu'est-ce que la Première Loi dit ?
-A. L'énergie meurt.
-B. L'énergie se transforme.
-C. L'énergie est froide.
-
-4. Traduction
-Traduisez cette phrase en français :
-"The atoms do not move at absolute zero."
-
-5. Conjugaison
-Mettez le verbe entre parenthèses au Présent.
-a. La température (descendre) vite.
-b. Nous (étudier) la physique avec passion.
-c. Les lois (être) strictes.
-
-6. Réponse courte
-Répondez en français :
-Est-ce qu'on peut réparer un verre cassé sans énergie ?</description><guid isPermaLink="false">daily-drill-2026-01-11</guid><enclosure url="https://drive.google.com/uc?id=1SsdtdIxAWCwGs1wAF-R_UCrEtb5inATW&amp;export=download" length="3873549" type="audio/mpeg"/><pubDate>Sun, 11 Jan 2026 06:00:00 +0000</pubDate></item></channel></rss>
+[FR] C'est la base de la philosophie moderne. Nous avons trouvé notre point de départ. La prochaine fois, nous verrons comment Descartes utilise cette certitude pour prouver l'existence de Dieu et du monde. Merci de votre attention. Continuez à penser, donc continuez à être. Au revoir !</description><guid isPermaLink="false">daily-drill-2026-01-11</guid><enclosure url="https://drive.google.com/uc?id=1JTGTs15zEYub8wI7BsKdmV8-JxFFHPYf&amp;export=download" length="2840493" type="audio/mpeg"/><pubDate>Sun, 11 Jan 2026 06:00:00 +0000</pubDate></item></channel></rss>
