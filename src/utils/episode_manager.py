@@ -1,5 +1,6 @@
 import json
 import os
+import shutil
 from typing import Dict, List
 
 EPISODES_FILE = "episodes.json"
@@ -21,6 +22,11 @@ class EpisodeManager:
     def save_episodes(self):
         with open(self.filepath, 'w') as f:
             json.dump(self.episodes, f, indent=2)
+        # Also copy to docs folder for GitHub Pages reading interface
+        docs_dir = "docs"
+        if os.path.exists(docs_dir):
+            shutil.copy(self.filepath, os.path.join(docs_dir, EPISODES_FILE))
+            print(f"Episodes JSON copied to {docs_dir}/")
 
     def add_episode(self, date: str, listening_topic: str, reading_topic: str,
                    audio_url: str, description_text: str, reading_content: str = "", file_size: int = 0):

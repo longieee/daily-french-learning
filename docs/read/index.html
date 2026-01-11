@@ -37,7 +37,7 @@
 
         async function loadEpisodes() {
             try {
-                const response = await fetch('../episodes.json');
+                const response = await fetch('/daily-french-learning/episodes.json');
                 episodes = await response.json();
                 if (episodes.length > 0) {
                     renderEpisode(0);
