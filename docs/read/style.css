@@ -1,0 +1,143 @@
+/* Mobile-first responsive design for French reading practice */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --bg: #fefefe;
+    --text: #2c3e50;
+    --text-light: #7f8c8d;
+    --border: #ecf0f1;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: #ecf0f1;
+        --accent: #5dade2;
+        --bg: #1a1a2e;
+        --text: #ecf0f1;
+        --text-light: #bdc3c7;
+        --border: #34495e;
+    }
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    min-height: 100vh;
+    padding: 1rem;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.subtitle {
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 0.25rem;
+}
+
+nav#episode-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+nav button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+}
+
+nav button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+nav button:not(:disabled):hover {
+    opacity: 0.85;
+}
+
+#date-display {
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+main {
+    padding-bottom: 2rem;
+}
+
+#topic-title {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+#reading-content {
+    font-size: 1.1rem;
+}
+
+#reading-content p {
+    margin-bottom: 1.25rem;
+    text-align: justify;
+}
+
+/* French text styling */
+#reading-content p:first-of-type::first-letter {
+    font-size: 2.5rem;
+    float: left;
+    line-height: 1;
+    margin-right: 0.15rem;
+    color: var(--accent);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border);
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 600px) {
+    body {
+        padding: 2rem;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    #reading-content {
+        font-size: 1.15rem;
+    }
+}

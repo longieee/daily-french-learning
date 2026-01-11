@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Obsédé - Lecture du Jour</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>L'Obsédé</h1>
+        <p class="subtitle">Lecture Quotidienne</p>
+    </header>
+
+    <nav id="episode-nav">
+        <button id="prev-btn" disabled>&larr; Précédent</button>
+        <span id="date-display">Chargement...</span>
+        <button id="next-btn" disabled>Suivant &rarr;</button>
+    </nav>
+
+    <main id="content">
+        <section id="reading-section">
+            <h2 id="topic-title">Chargement...</h2>
+            <div id="reading-content">
+                <p>Chargement du contenu...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Généré automatiquement par Gemini</p>
+    </footer>
+
+    <script>
+        let episodes = [];
+        let currentIndex = 0;
+
+        async function loadEpisodes() {
+            try {
+                const response = await fetch('../episodes.json');
+                episodes = await response.json();
+                if (episodes.length > 0) {
+                    renderEpisode(0);
+                    updateNav();
+                } else {
+                    document.getElementById('reading-content').innerHTML = '<p>Aucun épisode disponible.</p>';
+                }
+            } catch (error) {
+                document.getElementById('reading-content').innerHTML = '<p>Erreur de chargement.</p>';
+                console.error('Error loading episodes:', error);
+            }
+        }
+
+        function renderEpisode(index) {
+            const ep = episodes[index];
+            document.getElementById('date-display').textContent = ep.date;
+            document.getElementById('topic-title').textContent = ep.reading_topic || 'Lecture';
+            
+            // Use reading_content if available, fallback to description
+            const content = ep.reading_content || ep.description || 'Contenu non disponible.';
+            
+            // Convert plain text to HTML paragraphs
+            const htmlContent = content
+                .split('\n\n')
+                .map(para => `<p>${para.replace(/\n/g, '<br>')}</p>`)
+                .join('');
+            
+            document.getElementById('reading-content').innerHTML = htmlContent;
+        }
+
+        function updateNav() {
+            document.getElementById('prev-btn').disabled = currentIndex >= episodes.length - 1;
+            document.getElementById('next-btn').disabled = currentIndex <= 0;
+        }
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            if (currentIndex < episodes.length - 1) {
+                currentIndex++;
+                renderEpisode(currentIndex);
+                updateNav();
+            }
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderEpisode(currentIndex);
+                updateNav();
+            }
+        });
+
+        loadEpisodes();
+    </script>
+</body>
+</html>

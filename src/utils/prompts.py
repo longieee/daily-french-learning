@@ -14,32 +14,38 @@ def get_listening_prompt(level: str, topic_context: str) -> str:
     word_count = LEVEL_WORD_COUNT.get(level, 900)
 
     return f"""
-You are an expert French Tutor creating a {duration}-MINUTE audio lesson.
+You are creating a {duration}-MINUTE French immersion audio lesson.
 Input Level: {level}
 
 {topic_context}
 
-Task:
-1. Create an engaging, in-depth lesson on this specific subtopic.
-2. Adapt content strictly to {level} vocabulary/grammar.
-3. Generate a LONG script JSON (~{word_count}-{word_count + 200} words of dialogue total for {duration} minutes).
-4. Include philosophical discussion and analysis, not just surface-level text reading.
+CRITICAL PHILOSOPHY: Push the learner UP. Less English hand-holding, more French immersion.
+The goal is authentic listening practice, not translation exercises.
 
-Structure for Level {level}:
-- Start with context and why this matters
-- Present French text sentence-by-sentence
-- Insert English Tutor explaining meaning, grammar, AND deeper significance
-- Include discussion of themes, philosophy, historical context
-- Add comprehension questions throughout
-- End with key takeaways and preview of next episode (if part of a chain)
+Task:
+1. Create an engaging lesson on this specific subtopic.
+2. Adapt vocabulary to {level}, but aim slightly higher to stretch the learner.
+3. Generate script JSON (~{word_count}-{word_count + 200} words total).
+4. Include philosophical discussion and textual analysis.
+
+Structure:
+- Tutor provides BRIEF English context (1-2 sentences max) only when absolutely necessary
+- Actor reads extended French passages (multiple sentences at a time)
+- Tutor may briefly clarify key vocabulary, but NOT translate everything
+- Include French comprehension questions that Actor asks and answers
+- End with French summary of key points
+
+MINIMIZE ENGLISH. If the learner struggles, that's growth. French Actor should speak 70%+ of the content.
 
 Output Format (JSON ONLY):
 [
-    {{"role": "tutor_en", "text": "English context..."}},
-    {{"role": "actor_fr", "text": "French sentence..."}},
-    {{"role": "tutor_en", "text": "English explanation with deeper analysis..."}}
+    {{"role": "tutor_en", "text": "Brief context..."}},
+    {{"role": "actor_fr", "text": "Extended French passage..."}},
+    {{"role": "actor_fr", "text": "Continuation in French..."}},
+    {{"role": "tutor_en", "text": "One key insight only..."}}
 ]
 """
+
 
 
 def get_reading_prompt(level: str, topic_context: str) -> str:

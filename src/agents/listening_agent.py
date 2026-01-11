@@ -12,10 +12,22 @@ class ListeningAgent:
         self.client = client
         self.drive_client = drive_client
 
+    def _format_transcript(self, script_json: list) -> str:
+        """Format script JSON as readable transcript for podcast description."""
+        lines = []
+        for turn in script_json:
+            role = turn.get("role", "")
+            text = turn.get("text", "")
+            if role == "tutor_en":
+                lines.append(f"[EN] {text}")
+            else:
+                lines.append(f"[FR] {text}")
+        return "\n\n".join(lines)
+
     def generate_episode(self, level: str, topic: str, date_str: str, is_gauntlet: bool = False, topics_summary: str = "") -> tuple:
         """
         Generates the audio, uploads to Drive, deletes local file.
-        Returns a tuple of (drive_url, file_size).
+        Returns a tuple of (drive_url, file_size, transcript).
         """
         print(f"ListeningAgent: Generating script for level {level}, topic {topic} (Gauntlet={is_gauntlet})...")
 
@@ -42,6 +54,9 @@ class ListeningAgent:
         except json.JSONDecodeError as e:
             print(f"Error decoding script JSON: {e}")
             raise
+
+        # Format transcript for podcast description
+        transcript = self._format_transcript(script_json)
 
         # 2. Generate Audio
         print("ListeningAgent: Synthesizing audio...")
@@ -93,4 +108,4 @@ class ListeningAgent:
         except OSError as e:
             print(f"Warning: Could not delete temp file: {e}")
 
-        return drive_url, file_size
+        return drive_url, file_size, transcript

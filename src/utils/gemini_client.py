@@ -88,16 +88,28 @@ class GeminiClient:
         """Generate audio for a single chunk of the script."""
         url = f"{self.base_url}/{model}:streamGenerateContent?key={self.api_key}"
 
-        parts = []
-        parts.append(
-            "Read the following dialogue aloud at a natural, conversational pace. Do not slow down for language learners - speak at normal native speed. Speaker 1 is an English Tutor (Voice: Zephyr). Speaker 2 is a French Actor (Voice: Puck)."
-        )
+        # Build structured prompt with director's notes for better TTS control
+        director_notes = """# AUDIO PROFILES
 
+## Tutor (Voice: Zephyr)
+Concise English instructor. Keep English brief - only essential context.
+
+## Acteur (Voice: Puck)
+Native French speaker reading French text with authentic Parisian accent.
+
+### DIRECTOR'S NOTES
+Pacing: Fast, natural conversational speed. No slow dictation. Speak as natives would in real conversation.
+Tutor: American English accent. Brief and efficient delivery.
+Acteur: Native French (Parisian) accent. Speak French passages at authentic native speed with proper French phonetics.
+
+### DIALOGUE
+"""
+        dialogue_lines = []
         for turn in script_chunk:
-            speaker_label = "Speaker 1" if turn["role"] == "tutor_en" else "Speaker 2"
-            parts.append(f"{speaker_label}: {turn['text']}")
+            speaker_label = "Tutor" if turn["role"] == "tutor_en" else "Acteur"
+            dialogue_lines.append(f"{speaker_label}: {turn['text']}")
 
-        full_prompt_text = "\n".join(parts)
+        full_prompt_text = director_notes + "\n".join(dialogue_lines)
 
         payload = {
             "contents": [
@@ -109,23 +121,23 @@ class GeminiClient:
                 }
             ],
             "generationConfig": {
-                "responseModalities": ["audio"],
-                "speech_config": {
-                    "multi_speaker_voice_config": {
-                        "speaker_voice_configs": [
+                "responseModalities": ["AUDIO"],
+                "speechConfig": {
+                    "multiSpeakerVoiceConfig": {
+                        "speakerVoiceConfigs": [
                             {
-                                "speaker": "Speaker 1",
-                                "voice_config": {
-                                    "prebuilt_voice_config": {
-                                        "voice_name": "Zephyr"
+                                "speaker": "Tutor",
+                                "voiceConfig": {
+                                    "prebuiltVoiceConfig": {
+                                        "voiceName": "Zephyr"
                                     }
                                 }
                             },
                             {
-                                "speaker": "Speaker 2",
-                                "voice_config": {
-                                    "prebuilt_voice_config": {
-                                        "voice_name": "Puck"
+                                "speaker": "Acteur",
+                                "voiceConfig": {
+                                    "prebuiltVoiceConfig": {
+                                        "voiceName": "Puck"
                                     }
                                 }
                             }
@@ -134,6 +146,7 @@ class GeminiClient:
                 }
             }
         }
+
 
         # TTS with retry logic for connection errors
         max_retries = 3

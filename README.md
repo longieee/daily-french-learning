@@ -7,19 +7,23 @@ This project generates daily French study materials (Audio & Text) using Google 
 ### Components
 1.  **Manager (`src/main.py`)**: The central orchestrator. It runs daily, checks user state (level, streak), brainstorms new topics, and triggers the agents.
 2.  **Listening Agent (`src/agents/listening_agent.py`)**:
-    -   Generates a podcast script (French Literature/Philosophy) using `gemini-3-pro-preview`.
-    -   Synthesizes multi-speaker audio (Tutor + Actor) using `gemini-2.5-pro-preview-tts` (Voices: Zephyr & Puck).
-    -   Uploads the MP3 to **Google Drive** via `DriveClient`.
-    -   Returns a public link to the audio.
-3.  **Reading Agent (`src/agents/reading_agent.py`)**:
-    -   Generates a technical essay (Math/Physics) using `gemini-3-pro-preview`.
-    -   Output is stored as text metadata.
-4.  **Episode Manager (`src/utils/episode_manager.py`)**:
-    -   Maintains a database of past episodes in `episodes.json`.
-    -   Stores Date, Topics, Audio URL (Drive), and Essay Text.
-5.  **RSS Generator (`src/utils/rss_generator.py`)**:
-    -   Reads `episodes.json` and generates a valid Podcast RSS feed (`feed.xml`).
-    -   Uses the Google Drive public link for the audio enclosure.
+    - Generates a French-immersive podcast script (Literature/Philosophy) using `gemini-3-pro-preview`.
+    - Synthesizes multi-speaker audio (Tutor + Acteur) using `gemini-2.5-pro-preview-tts` (Voices: Zephyr & Puck).
+    - Uploads the MP3 to **Google Drive** via `DriveClient`.
+    - Returns a public link, file size, and transcript.
+3. **Reading Agent (`src/agents/reading_agent.py`)**:
+    - Generates a technical essay (Math/Physics) using `gemini-3-pro-preview`.
+    - Output is stored separately for web access.
+4. **Episode Manager (`src/utils/episode_manager.py`)**:
+    - Maintains a database of past episodes in `episodes.json`.
+    - Stores Date, Topics, Audio URL (Drive), Transcript (podcast description), and Reading Content.
+5. **RSS Generator (`src/utils/rss_generator.py`)**:
+    - Reads `episodes.json` and generates a valid Podcast RSS feed (`feed.xml`).
+    - Uses the Google Drive public link for the audio enclosure.
+6. **Reading Web Interface (`docs/read/`)**:
+    - Mobile-friendly static site for reading practice on iPhone/MacBook.
+    - Loads `episodes.json` and displays reading content with dark mode support.
+
 
 ### Data Flow
 1.  **GitHub Actions** triggers `src/main.py` daily at 06:00 UTC.

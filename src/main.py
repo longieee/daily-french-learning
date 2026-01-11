@@ -135,7 +135,7 @@ def main():
         print(f"Entering GAUNTLET MODE. Reviewing: {topics_summary}")
 
         # Generate content
-        audio_url = listening_agent.generate_episode(
+        audio_url, file_size, transcript = listening_agent.generate_episode(
             current_level,
             listening_context,
             today_str,
@@ -222,8 +222,8 @@ def main():
         print(f"Reading: {reading_topic}")
 
         try:
-            # 1. Generate Listening (Audio -> Drive URL)
-            audio_url, file_size = listening_agent.generate_episode(
+            # 1. Generate Listening (Audio -> Drive URL + Transcript)
+            audio_url, file_size, transcript = listening_agent.generate_episode(
                 current_level, listening_context, today_str
             )
             print(f"Audio available at: {audio_url} ({file_size} bytes)")
@@ -261,13 +261,15 @@ def main():
             print(f"Critical Error during content generation: {e}")
             raise
 
-    # Save Episode Metadata
+
+    # Save Episode Metadata (transcript as podcast description, essay for reading)
     episode_manager.add_episode(
         date=today_str,
         listening_topic=listening_topic,
         reading_topic=reading_topic,
         audio_url=audio_url,
-        description_text=essay_text,
+        description_text=transcript,
+        reading_content=essay_text,
         file_size=file_size,
     )
 
