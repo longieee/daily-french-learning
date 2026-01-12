@@ -1,46 +1,58 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>L'Obsédé - Daily French Drill</title><link>https://longieee.github.io/daily-french-learning</link><description>Automated French learning: Literature, Philosophy, Math, and Physics.</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://longieee.github.io/daily-french-learning/artwork.jpg</url><title>L'Obsédé - Daily French Drill</title><link>https://longieee.github.io/daily-french-learning</link></image><language>fr</language><lastBuildDate>Sun, 11 Jan 2026 15:24:51 +0000</lastBuildDate><itunes:author>The Machine</itunes:author><itunes:category text="Education"><itunes:category text="Language Courses"/></itunes:category><itunes:image href="https://longieee.github.io/daily-french-learning/artwork.jpg"/><itunes:explicit>no</itunes:explicit><itunes:owner><itunes:name>The Machine</itunes:name><itunes:email>bot@machine.com</itunes:email></itunes:owner><itunes:summary>Daily automated French learning podcast covering Literature, Philosophy, Mathematics, and Physics. Each episode features listening comprehension and vocabulary building.</itunes:summary><item><title>Drill: 2026-01-11 - Le Rationalisme Français: Cogito Ergo Sum (1/2)</title><link>https://drive.google.com/uc?id=1JTGTs15zEYub8wI7BsKdmV8-JxFFHPYf&amp;export=download</link><description>[EN] Welcome to Episode 1 of our series on French Rationalism. Today, we meet René Descartes in the 17th century. We are looking for one thing: la vérité—the truth.
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>L'Obsédé - Daily French Drill</title><link>https://longieee.github.io/daily-french-learning</link><description>Automated French learning: Literature, Philosophy, Math, and Physics.</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://longieee.github.io/daily-french-learning/artwork.jpg</url><title>L'Obsédé - Daily French Drill</title><link>https://longieee.github.io/daily-french-learning</link></image><language>fr</language><lastBuildDate>Mon, 12 Jan 2026 09:40:57 +0000</lastBuildDate><itunes:author>The Machine</itunes:author><itunes:category text="Education"><itunes:category text="Language Courses"/></itunes:category><itunes:image href="https://longieee.github.io/daily-french-learning/artwork.jpg"/><itunes:explicit>no</itunes:explicit><itunes:owner><itunes:name>The Machine</itunes:name><itunes:email>bot@machine.com</itunes:email></itunes:owner><itunes:summary>Daily automated French learning podcast covering Literature, Philosophy, Mathematics, and Physics. Each episode features listening comprehension and vocabulary building.</itunes:summary><item><title>Drill: 2026-01-12 - Huis Clos - Jean-Paul Sartre: Le Regard et le Jugement (1/2)</title><link>https://drive.google.com/uc?id=1C9jgsat6FXSxkxp0pH2IacYK_7eJO0f4&amp;export=download</link><description>[EN] Welcome to French immersion. Today, we enter the world of Jean-Paul Sartre and his famous play, Huis Clos. This is Episode 1: Le Regard et le Jugement.
 
-[FR] Bonjour. Aujourd'hui, nous sommes en France, mais nous sommes aussi dans l'esprit d'un homme très célèbre. Il s'appelle René Descartes. C'est l'année mille-six-cent-trente-sept (1637). Descartes a un problème. Il est intelligent, il a étudié les mathématiques, la philosophie et les sciences. Mais il n'est pas satisfait.
+[FR] Bonjour à tous. Aujourd'hui, nous ouvrons la porte de l'enfer. Mais attention, l'enfer de Sartre n'est pas un lieu de feu et de flammes. Non. C'est une simple chambre d'hôtel. Un salon style Second Empire. C'est très ordinaire, et c'est pour cela que c'est effrayant.
 
-[FR] Il regarde sa bibliothèque. Il regarde ses livres. Il pense : « J'ai appris beaucoup de choses. Mais est-ce que ces choses sont vraies ? Vraiment vraies ? Ou est-ce que ce sont seulement des opinions ? » Descartes veut construire une maison solide. Mais pour construire une maison solide, il faut une fondation parfaite. Il cherche une certitude absolue.
+[FR] Dans cette pièce, il y a trois personnages principaux : Garcin, Inès et Estelle. Ils sont morts. Ils arrivent en enfer. Ils attendent le bourreau. Le bourreau, c'est la personne qui torture. Mais le bourreau ne vient jamais. Pourquoi ? Parce que la torture, ce n'est pas physique. La torture, c'est psychologique.
 
-[EN] To find this absolute certainty, Descartes uses a radical method: Le Doute Méthodique—Methodical Doubt.
+[EN] Listen closely to the description of the room. Notice what is missing.
 
-[FR] Le doute. C'est un mot très important. Douter, c'est dire « je ne suis pas sûr ». Descartes décide de douter de tout. Absolument tout. Il commence par ses sens. Les sens, ce sont la vue, l'ouïe, le toucher. Par exemple, je vois une table devant moi. Je touche la table. Elle est dure. Elle est réelle, n'est-ce pas ?
+[FR] Regardons la chambre. Il y a des canapés. Il y a une statue en bronze. Il y a un coupe-papier. Mais il manque quelque chose d'essentiel. Il n'y a pas de fenêtres. Impossible de voir dehors. Et surtout, il n'y a pas de miroirs. Pas de glaces.
 
-[FR] Mais attendez. Descartes dit : « Parfois, mes sens me trompent. » Par exemple, quand je regarde un bâton dans l'eau, le bâton semble brisé, il semble courbé. Mais c'est une illusion d'optique. Si mes yeux me mentent une fois, peut-être qu'ils me mentent toujours. Donc, je ne peux pas faire confiance à mes sens.
+[FR] Imaginez cela. Vous êtes dans une pièce pour l'éternité, et vous ne pouvez pas voir votre propre visage. Dans la vie, nous utilisons le miroir pour vérifier notre apparence. Pour nous rassurer. Ici, c'est impossible. Garcin, le premier personnage, cherche un miroir partout. Il panique. Sans miroir, comment savoir qui il est ?
 
-[FR] Il va plus loin. Beaucoup plus loin. Il se pose une question effrayante : « Est-ce que je dors ? » Quand je rêve, je vois des choses. Je vois des monstres, je vois des paysages, je parle avec des amis. Dans le rêve, tout semble réel. C'est très réaliste. Mais quand je me réveille, je réalise que c'était une illusion.
+[EN] Without a mirror, the characters must rely on something else to see themselves: The Gaze. Le Regard.
 
-[FR] Alors, Descartes demande : « Comment savoir si je ne rêve pas maintenant ? Peut-être que cette leçon n'existe pas. Peut-être que vous n'écoutez pas. Peut-être que tout est un grand rêve. » C'est le doute total.
+[FR] C'est ici que le concept du « Regard » commence. Si je n'ai pas de miroir, je dois utiliser les yeux des autres. Les autres deviennent mon miroir. Inès dit à Estelle : « Je suis votre miroir. » Mais attention ! Un miroir en verre est neutre. Il reflète la réalité. Une personne n'est pas neutre. Une personne juge.
 
-[EN] He has stripped away the physical world. Now, imagine a chaotic void where nothing is certain.
+[FR] Si Inès déteste Estelle, elle peut mentir. Elle peut dire : « Tu as un bouton sur le nez » ou « Ton rouge à lèvres est mal mis. » Estelle ne peut pas vérifier. Elle est prisonnière du regard d'Inès. Elle est totalement dépendante. C'est terrifiant, n'est-ce pas ? Être vu, c'est perdre sa liberté.
 
-[FR] Imaginez le vide. Il n'y a pas de corps. Il n'y a pas de monde. Il n'y a pas de ciel. Il n'y a pas de mathématiques, car peut-être qu'un « Malin Génie », un démon très puissant, me trompe. Peut-être qu'il me fait croire que deux plus deux font quatre, mais c'est faux.
+[EN] Consider the Valet who works in this hotel. He has a specific physical trait representing constant observation.
 
-[FR] Descartes est seul dans le noir. Il doute de tout. C'est vertigineux. Il a peur. Il cherche juste un point fixe. Une petite chose qui est indubitable—impossible à douter.
+[FR] Parlons du Valet. C'est l'employé de l'enfer. Il a une caractéristique physique très bizarre : il n'a pas de paupières. Les paupières, c'est la peau qui couvre les yeux quand on dort ou quand on cligne des yeux. Le Valet ne cligne jamais des yeux. Il ne dort jamais. Il voit tout, tout le temps.
 
-[FR] Soudain, il trouve une lumière. Écoutez bien la logique. C'est simple, mais génial. Descartes pense : « Je peux douter de mes yeux. Je peux douter de mon corps. Je peux douter du monde. Mais... pour douter, je dois penser. »
+[FR] Pour Sartre, c'est une image de la conscience absolue. On ne peut pas se cacher. Garcin veut éteindre la lumière. Mais l'interrupteur ne marche pas. La lumière reste allumée, toujours. C'est une exposition totale. Vos actes, vos crimes, vos pensées... tout est visible. C'est le début du jugement.
 
-[FR] Si je doute, je pense. Le doute est une forme de pensée. Et si je pense... il faut que j'existe. Le néant ne peut pas penser. Le rien ne peut pas douter. Pour être trompé par un démon, je dois exister.
+[FR] Les trois personnages ont des secrets. Garcin a été un lâche, un déserteur. Estelle a tué son bébé. Inès a détruit la vie de son cousin. Au début, ils mentent. Ils disent : « Je suis ici par erreur. » C'est ce que Sartre appelle « la mauvaise foi ». Ils se mentent à eux-mêmes.
 
-[EN] This leads to the most famous phrase in Western philosophy.
+[EN] Mauvaise foi: Self-deception. They try to hide their true nature, but the others watch and judge.
 
-[FR] Il formule cette découverte en latin : « Cogito, ergo sum ». En français, nous disons : « Je pense, donc je suis ». Répétez avec moi, c'est important : Je pense, donc je suis.
+[FR] Garcin veut être un héros. Il dit : « Je suis mort pour mes idées. » Il essaie de construire cette image. Mais Inès le regarde. Elle voit la peur dans ses yeux. Elle voit la vérité. Elle dit : « Tu as peur. Tu es un lâche. »
 
-[FR] « Je pense » : c'est l'action immédiate. C'est la conscience. « Donc » : c'est la conséquence logique. « Je suis » : c'est l'existence. Même si je rêve, je suis. Même si je suis fou, je suis. C'est la première brique de la maison. C'est la première vérité.
+[FR] Garcin ne peut pas convaincre Inès. Dans la vie, si quelqu'un ne vous aime pas, vous pouvez partir. Vous pouvez changer d'amis. En enfer, la porte est fermée à clé. Ils sont ensemble pour toujours. Inès sera toujours là pour regarder Garcin et pour dire : « Tu es un lâche. »
 
-[FR] Maintenant, faisons une petite analyse ensemble. Je vais vous poser des questions. Essayez de répondre avant moi.
+[FR] C'est cela, la torture. Ce n'est pas la douleur physique. C'est le jugement perpétuel de l'autre. Je deviens un objet sous le regard de l'autre. Je ne suis plus le maître de mon image. L'autre possède mon image.
 
-[FR] Question un : Pourquoi Descartes ne fait-il pas confiance à ses sens ? ... Parce que les sens nous trompent parfois. Comme l'illusion d'optique.
+[EN] Let's test your understanding with three questions. Répondez à voix haute.
 
-[FR] Question deux : Quelle est la seule chose que Descartes ne peut pas douter ? ... Il ne peut pas douter de sa propre pensée. Il ne peut pas douter qu'il est un être pensant.
+[FR] Première question : Pourquoi les personnages sont-ils malheureux de ne pas avoir de miroir ?
 
-[FR] C'est intéressant, n'est-ce pas ? Pour Descartes, l'esprit est plus certain que le corps. Je suis plus sûr de mon esprit que de mes mains ou de mes pieds. C'est le début du Rationalisme.
+[FR] Réfléchissez... La réponse est : Parce qu'ils ne peuvent pas se voir eux-mêmes. Ils dépendent du regard des autres.
 
-[EN] He has found the foundation. But what can he build on it? That is for the next episode.
+[FR] Deuxième question : Quelle est la particularité physique du Valet ?
 
-[FR] Pour finir, résumons les points clés de cette leçon. Un : Descartes cherche la vérité absolue. Deux : Il utilise « le doute méthodique » pour éliminer le faux. Trois : Il découvre que s'il doute, il pense. Quatre : La conclusion est « Je pense, donc je suis ».
+[FR] C'est un détail important. La réponse : Il n'a pas de paupières. Il ne peut pas fermer les yeux.
 
-[FR] C'est la base de la philosophie moderne. Nous avons trouvé notre point de départ. La prochaine fois, nous verrons comment Descartes utilise cette certitude pour prouver l'existence de Dieu et du monde. Merci de votre attention. Continuez à penser, donc continuez à être. Au revoir !</description><guid isPermaLink="false">daily-drill-2026-01-11</guid><enclosure url="https://drive.google.com/uc?id=1JTGTs15zEYub8wI7BsKdmV8-JxFFHPYf&amp;export=download" length="2840493" type="audio/mpeg"/><pubDate>Sun, 11 Jan 2026 06:00:00 +0000</pubDate></item></channel></rss>
+[FR] Troisième question : Pourquoi Garcin souffre-t-il du regard d'Inès ?
+
+[FR] C'est psychologique. La réponse : Parce qu'Inès voit la vérité. Elle le juge comme un lâche. Il ne peut pas lui mentir.
+
+[EN] Excellent. We are witnessing the trap closing on them.
+
+[FR] Exactement. Le piège se referme. Ils réalisent qu'ils sont nus, psychologiquement. Pas de vêtements pour cacher l'âme. Pas de nuit pour cacher les yeux. Pas de silence. Ils doivent parler, s'expliquer, et subir le jugement.
+
+[FR] Estelle essaie de séduire Garcin pour qu'il ne la juge pas. Garcin essaie de convaincre Inès. Inès, elle, est cruelle. Elle accepte d'être en enfer. Elle veut faire mal. C'est un triangle de souffrance. A a besoin de B, B a besoin de C, mais personne ne peut satisfaire l'autre.
+
+[FR] En résumé pour cet épisode : Le regard de l'autre nous définit. Sans miroir, je suis ce que tu vois. Si tu me vois comme un monstre, je suis un monstre. Je ne peux pas échapper à ton jugement. C'est une prison sans murs.
+
+[EN] This constant observation leads to the play's most famous conclusion. Join us for Episode 2, where we will discuss the famous line: 'Hell is other people.'</description><guid isPermaLink="false">daily-drill-2026-01-12</guid><enclosure url="https://drive.google.com/uc?id=1C9jgsat6FXSxkxp0pH2IacYK_7eJO0f4&amp;export=download" length="3412581" type="audio/mpeg"/><pubDate>Mon, 12 Jan 2026 06:00:00 +0000</pubDate></item></channel></rss>
