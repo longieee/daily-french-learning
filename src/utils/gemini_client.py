@@ -129,7 +129,7 @@ Acteur: Native French (Parisian) accent. Speak French passages at authentic nati
                                 "speaker": "Tutor",
                                 "voiceConfig": {
                                     "prebuiltVoiceConfig": {
-                                        "voiceName": "Zephyr"
+                                        "voiceName": "Achernar"
                                     }
                                 }
                             },
@@ -137,7 +137,7 @@ Acteur: Native French (Parisian) accent. Speak French passages at authentic nati
                                 "speaker": "Acteur",
                                 "voiceConfig": {
                                     "prebuiltVoiceConfig": {
-                                        "voiceName": "Puck"
+                                        "voiceName": "Alnilam"
                                     }
                                 }
                             }
