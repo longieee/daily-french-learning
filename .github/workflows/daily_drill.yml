@@ -37,7 +37,7 @@ jobs:
         run: |
           git config --global user.name "The Drill Sergeant"
           git config --global user.email "bot@machine.com"
-          git add episodes.json feed.xml user_state.json docs/
+          git add episodes.json feed.xml user_state.json read/
           # Explicitly ensure we are NOT adding any content/ files if they exist
           git reset content/ 2>/dev/null || true
 
