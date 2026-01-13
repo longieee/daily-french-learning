@@ -1,22 +1,16 @@
 {
   "current_level": "A2",
-  "xp_in_level": 1,
+  "xp_in_level": 2,
   "status": "TRAINING",
-  "last_run_date": "2026-01-12",
-  "day_streak": 1,
-  "current_chain": {
-    "category": "literature",
-    "topic_name": "Huis Clos - Jean-Paul Sartre",
-    "subtopic_id": "huisclos-3",
-    "current_episode": 2,
-    "total_episodes": 2
-  },
+  "last_run_date": "2026-01-13",
+  "day_streak": 2,
+  "current_chain": null,
   "progress": {
     "literature": {
       "Huis Clos - Jean-Paul Sartre": {
         "huisclos-3": {
-          "completed_episodes": 1,
-          "last_studied": "2026-01-12"
+          "completed_episodes": 2,
+          "last_studied": "2026-01-13"
         }
       }
     },
@@ -29,6 +23,13 @@
         }
       }
     },
-    "mathematics": {}
+    "mathematics": {
+      "V. Algèbres d'Opérateurs (Introduction C*)": {
+        "alg-2": {
+          "completed_episodes": 1,
+          "last_studied": "2026-01-13"
+        }
+      }
+    }
   }
 }
