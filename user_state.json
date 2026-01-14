@@ -1,10 +1,16 @@
 {
   "current_level": "A2",
-  "xp_in_level": 2,
+  "xp_in_level": 3,
   "status": "TRAINING",
-  "last_run_date": "2026-01-13",
-  "day_streak": 2,
-  "current_chain": null,
+  "last_run_date": "2026-01-14",
+  "day_streak": 3,
+  "current_chain": {
+    "category": "philosophy",
+    "topic_name": "L'Existentialisme",
+    "subtopic_id": "exist-1",
+    "current_episode": 2,
+    "total_episodes": 2
+  },
   "progress": {
     "literature": {
       "Huis Clos - Jean-Paul Sartre": {
@@ -14,7 +20,14 @@
         }
       }
     },
-    "philosophy": {},
+    "philosophy": {
+      "L'Existentialisme": {
+        "exist-1": {
+          "completed_episodes": 1,
+          "last_studied": "2026-01-14"
+        }
+      }
+    },
     "physics": {
       "La Thermodynamique": {
         "thermo-2": {
@@ -26,8 +39,8 @@
     "mathematics": {
       "V. Algèbres d'Opérateurs (Introduction C*)": {
         "alg-2": {
-          "completed_episodes": 1,
-          "last_studied": "2026-01-13"
+          "completed_episodes": 2,
+          "last_studied": "2026-01-14"
         }
       }
     }
