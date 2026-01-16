@@ -1,16 +1,28 @@
 {
   "current_level": "A2",
-  "xp_in_level": 4,
+  "xp_in_level": 5,
   "status": "TRAINING",
-  "last_run_date": "2026-01-15",
-  "day_streak": 4,
-  "current_chain": null,
+  "last_run_date": "2026-01-16",
+  "day_streak": 5,
+  "current_chain": {
+    "category": "literature",
+    "topic_name": "Candide - Voltaire",
+    "subtopic_id": "candide-4",
+    "current_episode": 2,
+    "total_episodes": 2
+  },
   "progress": {
     "literature": {
       "Huis Clos - Jean-Paul Sartre": {
         "huisclos-3": {
           "completed_episodes": 2,
           "last_studied": "2026-01-13"
+        }
+      },
+      "Candide - Voltaire": {
+        "candide-4": {
+          "completed_episodes": 1,
+          "last_studied": "2026-01-16"
         }
       }
     },
@@ -25,8 +37,8 @@
     "physics": {
       "La Thermodynamique": {
         "thermo-2": {
-          "completed_episodes": 2,
-          "last_studied": "2026-01-15"
+          "completed_episodes": 3,
+          "last_studied": "2026-01-16"
         }
       }
     },
