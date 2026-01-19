@@ -43,7 +43,7 @@ class DriveClient:
         """
         if not self.service:
             print("Drive service not initialized. Skipping upload.")
-            return "http://mock-drive-url.com/file.mp3"
+            return "http://mock-drive-url.com/file.mp3", 0
 
         file_metadata = {
             'name': filename,
