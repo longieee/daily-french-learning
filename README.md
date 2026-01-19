@@ -60,6 +60,25 @@ The following secrets must be set in the GitHub Repository settings:
 - `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REFRESH_TOKEN`: OAuth2 credentials for Google Drive.
 - `GOOGLE_DRIVE_FOLDER_ID`: The ID of the Google Drive folder for audio files.
 
+### Google Drive OAuth Setup
+
+1. **Create OAuth credentials:**
+   - Go to [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
+   - Create OAuth 2.0 Client ID (choose "Desktop app")
+   - Download JSON and save as `scripts/client_secrets.json`
+
+2. **Get refresh token:**
+
+   ```bash
+   python scripts/get_refresh_token.py
+   ```
+
+3. **IMPORTANT - Publish your app** to avoid token expiration:
+   - Go to APIs & Services → OAuth consent screen
+   - Click **"Publish App"** to move from Testing → Production
+   - In Testing mode, tokens expire after 7 days!
+   - Once published, tokens don't expire (if used within 6 months)
+
 ### Local Development
 
 1. Install dependencies:
